@@ -18,22 +18,17 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <11 10>;
+            key-positions = <11 12>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <12 11>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
+            key-positions = <12 13>;
         };
 
         double_quotation {
             bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
+            key-positions = <1 2>;
         };
 
         eq {
@@ -45,6 +40,41 @@
             bindings = <&kp ESC>;
             key-positions = <0 1>;
             layers = <0>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <21 20>;
+        };
+
+        pipe {
+            bindings = <&kp NON_US_BACKSLASH>;
+            key-positions = <8 9>;
+        };
+
+        left_per {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <5 6>;
+        };
+
+        right_per {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <6 7>;
+        };
+
+        at {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <20 19>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <7 8>;
+        };
+
+        tilde {
+            bindings = <&kp RS(TILDE)>;
+            key-positions = <7 8>;
         };
     };
 
@@ -73,10 +103,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W         &kp E         &kp R                        &kp T                                                          &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A      &kp S         &kp D         &kp F                        &kp G        &mkp MCLK                          &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&kp Z      &kp X         &kp C         &kp V                        &kp B        &mt COLON LSHIFT                   &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
+&kp Q      &kp W         &kp E         &kp R                          &kp T                                                            &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp A      &kp S         &kp D         &kp F                          &kp G        &mkp MCLK                        &kp LEFT_BRACKET   &kp H        &kp J  &kp K      &kp L    &kp SEMI
+&kp Z      &kp X         &kp C         &kp V                          &kp B        &kp LEFT_SHIFT                   &kp RIGHT_BRACKET  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RSHFT SLASH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_MUHENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &kp BACKSPACE      &lt 1 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -135,6 +165,15 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
