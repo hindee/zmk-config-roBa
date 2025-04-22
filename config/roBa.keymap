@@ -6,7 +6,6 @@
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define ZMK_MOUSE_POINTING_SCRL_VAL 100
-
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
@@ -82,7 +81,7 @@
         };
 
         BT_SETTING {
-            bindings = <&lt_to_layer_0 0 LC(LA(B))>;
+            bindings = <&lt_to_layer_0 6 LC(LA(B))>;
             key-positions = <34 35 26>;
         };
     };
@@ -110,6 +109,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
             tap-ms = <20>;
         };
     };
