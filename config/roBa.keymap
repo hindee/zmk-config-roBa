@@ -45,11 +45,6 @@
             layers = <0>;
         };
 
-        colon {
-            bindings = <&kp COLON>;
-            key-positions = <21 20>;
-        };
-
         pipe {
             bindings = <&kp NON_US_BACKSLASH>;
             key-positions = <8 9>;
