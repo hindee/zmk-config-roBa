@@ -152,7 +152,7 @@
         major_symbols {
             bindings = <
 &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH  &kp DOLLAR  &kp PERCENT                                      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS     &kp TILDE    &kp PIPE
-&trans           &trans             &trans    &trans      &kp AMPERSAND  &trans      &kp NON_US_BACKSLASH  &kp SQT               &kp PLUS               &kp ASTERISK  &kp AT_SIGN  &kp LEFT_BRACKET
+&trans           &trans             &trans    &trans      &kp AMPERSAND  &trans      &kp LS(GRAVE)         &kp SQT               &kp PLUS               &kp ASTERISK  &kp AT_SIGN  &kp LEFT_BRACKET
 &trans           &trans             &trans    &trans      &trans         &trans      &kp NON_US_BACKSLASH  &trans                &trans                 &trans        &kp COLON    &kp RIGHT_BRACKET
 &trans           &trans             &trans    &trans      &trans         &trans      &trans                &trans                                                                  &kp UNDER
             >;
