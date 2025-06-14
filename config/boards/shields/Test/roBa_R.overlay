@@ -38,7 +38,7 @@
                 <NRF_PSEL(SPIM_MISO, 0, 4)>;
             low-power-enable;
         };
-    };
+    };j
 };
 
 &xiao_serial { status = "disabled"; };
