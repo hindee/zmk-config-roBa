@@ -151,19 +151,19 @@
 
         major_symbols {
             bindings = <
-&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH  &kp DOLLAR  &kp PERCENT                                             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS     &kp TILDE    &kp PIPE
-&trans           &trans             &trans    &trans      &kp AMPERSAND  &trans             &kp LS(GRAVE)         &kp SQT               &kp PLUS               &kp ASTERISK  &kp AT_SIGN  &kp LEFT_BRACKET
-&trans           &trans             &trans    &trans      &trans         &kp LG(LA(K))      &kp NON_US_BACKSLASH  &trans                &trans                 &trans        &kp COLON    &kp RIGHT_BRACKET
-&trans           &trans             &trans    &trans      &trans         &trans             &trans                &trans                                                                  &kp UNDER
+&kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH  &kp DOLLAR  &kp PERCENT                                             &kp JP_LPAREN  &kp JP_RPAREN  &kp MINUS     &kp JP_TILDE    &kp JP_PIPE
+&trans           &trans             &trans    &trans      &kp JP_AMPERSAND  &trans             &kp JP_QUOTE         &kp SQT               &kp JP_PLUS               &kp JP_ASTERISK  &kp JP_AT_SIGN  &kp JP_LBRACKET
+&trans           &trans             &trans    &trans      &trans         &kp LG(LA(K))      &kp JP_YEN  &trans                &trans                 &trans        &kp JP_COLON    &kp JP_RRACKET
+&trans           &trans             &trans    &trans      &trans         &trans             &trans                &trans                                                                  &kp JP_UNDERSCORE
             >;
         };
 
         NUM {
             bindings = <
 &kp F1   &kp F2   &kp F3               &kp F4      &kp F5                               &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PERCENT
-&kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &kp ASTERISK  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
+&kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &kp JP_ASTERISK  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
 &kp F11  &kp F12  &kp PRINTSCREEN      &kp INSERT  &kp HOME  &kp END      &kp SLASH     &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
-&trans   &trans   &kp LA(PRINTSCREEN)  &trans      &trans    &trans       &trans        &trans                                                  &kp PIPE
+&trans   &trans   &kp LA(PRINTSCREEN)  &trans      &trans    &trans       &trans        &trans                                                  &kp JP_PIPE
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
