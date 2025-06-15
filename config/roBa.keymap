@@ -133,6 +133,127 @@
 
             tap-ms = <20>;
         };
+
+        jis_CRT_TLD: jis_CRT_TLD {
+            compatible = "zmk,behavior-mod-morph";
+            label = "^ ~";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_CARET>, <&kp JP_TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_YEN_PIP: jis_YEN_PIP {
+            compatible = "zmk,behavior-mod-morph";
+            label = "\ |";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_YEN>, <&kp JP_PIPE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_AT_BKQ: jis_AT_BKQ {
+            compatible = "zmk,behavior-mod-morph";
+            label = "@ `";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_AT>, <&kp JP_BACKQUOTE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_LBK_LBT: jis_LBK_LBT {
+            compatible = "zmk,behavior-mod-morph";
+            label = "[ {";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_LBRACKET>, <&kp JP_LBRACE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_SCL_PLS: jis_SCL_PLS {
+            compatible = "zmk,behavior-mod-morph";
+            label = "; +";
+
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&kp JP_PLUS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_CLN_AST: jis_CLN_AST {
+            compatible = "zmk,behavior-mod-morph";
+            label = ": *";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_COLON>, <&kp JP_ASTERISK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_RBK_RBT: jis_RBK_RBT {
+            compatible = "zmk,behavior-mod-morph";
+            label = "] }";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_RBRACKET>, <&kp JP_RBRACE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_YEN_UNS: jis_YEN_UNS {
+            compatible = "zmk,behavior-mod-morph";
+            label = "\ _";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_YEN>, <&kp JP_UNDERSCORE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        jis_DQT: jis_DQT {
+            compatible = "zmk,behavior-key-press";
+            label = "\"";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_DQUOTE>;
+        };
+
+        jis_AMP: jis_AMP {
+            compatible = "zmk,behavior-key-press";
+            label = "&";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_AMPERSAND>;
+        };
+
+        jis_QUT: jis_QUT {
+            compatible = "zmk,behavior-key-press";
+            label = "'";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_QUOTE>;
+        };
+
+        jis_LPR: jis_LPR {
+            compatible = "zmk,behavior-key-press";
+            label = "(";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_LPAREN>;
+        };
+
+        jis_RPR: jis_RPR {
+            compatible = "zmk,behavior-key-press";
+            label = ")";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_RPAREN>;
+        };
+
+        jis_AST: jis_AST {
+            compatible = "zmk,behavior-key-press";
+            label = "*";
+
+            #binding-cells = <0>;
+            bindings = <&kp JP_ASTERISK>;
+        };
+
     };
 
     keymap {
@@ -151,19 +272,19 @@
 
         major_symbols {
             bindings = <
-&kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH  &kp DOLLAR  &kp PERCENT                                             &kp JP_LPAREN  &kp JP_RPAREN  &kp MINUS     &kp JP_TILDE    &kp JP_PIPE
-&trans           &trans             &trans    &trans      &kp JP_AMPERSAND  &trans             &kp JP_QUOTE         &kp SQT               &kp JP_PLUS               &kp JP_ASTERISK  &kp JP_AT  &kp JP_LBRACKET
-&trans           &trans             &trans    &trans      &trans         &kp LG(LA(K))      &kp JP_YEN  &trans                &trans                 &trans        &kp JP_COLON    &kp JP_RBRACKET
-&trans           &trans             &trans    &trans      &trans         &trans             &trans                &trans                                                                  &kp JP_UNDERSCORE
+&kp EXCLAMATION  &jis_DQT  &kp HASH  &kp DOLLAR  &kp PERCENT                                                 &jis_LPR            &jis_RPR      &kp MINUS       &jis_CRT_TLD    &jis_YEN_PIP
+&trans           &trans             &trans    &trans      &trans         &trans             &jis_QUT         &kp SQT             &trans        &jis_CLN_AST    &jis_AT_BKQ     &jis_LBK_LBT
+&trans           &trans             &trans    &trans      &trans         &kp LG(LA(K))      &jis_YEN_UNS     &trans              &trans        &trans          &jis_CLN_AST    &jis_RBK_RBT
+&trans           &trans             &trans    &trans      &trans         &trans             &trans           &trans                                                            &jis_YEN_UNS
             >;
         };
 
         NUM {
             bindings = <
 &kp F1   &kp F2   &kp F3               &kp F4      &kp F5                               &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PERCENT
-&kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &kp JP_ASTERISK  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
+&kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &jis_AST      &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
 &kp F11  &kp F12  &kp PRINTSCREEN      &kp INSERT  &kp HOME  &kp END      &kp SLASH     &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
-&trans   &trans   &kp LA(PRINTSCREEN)  &trans      &trans    &trans       &trans        &trans                                                  &kp JP_PIPE
+&trans   &trans   &kp LA(PRINTSCREEN)  &trans      &trans    &trans       &trans        &trans                                                  &jis_YEN_PIP
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
