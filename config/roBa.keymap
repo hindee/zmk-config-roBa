@@ -137,129 +137,128 @@
         jis_CRT_TLD: jis_CRT_TLD {
             compatible = "zmk,behavior-mod-morph";
             label = "^ ~";
-
             #binding-cells = <0>;
             bindings = <&kp JP_CARET>, <&kp JP_TILDE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_YEN_PIP: jis_YEN_PIP {
             compatible = "zmk,behavior-mod-morph";
             label = "\ |";
-
             #binding-cells = <0>;
             bindings = <&kp JP_YEN>, <&kp JP_PIPE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_AT_BKQ: jis_AT_BKQ {
             compatible = "zmk,behavior-mod-morph";
             label = "@ `";
-
             #binding-cells = <0>;
             bindings = <&kp JP_AT>, <&kp JP_BACKQUOTE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_LBK_LBT: jis_LBK_LBT {
             compatible = "zmk,behavior-mod-morph";
             label = "[ {";
-
             #binding-cells = <0>;
             bindings = <&kp JP_LBRACKET>, <&kp JP_LBRACE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_SCL_PLS: jis_SCL_PLS {
             compatible = "zmk,behavior-mod-morph";
             label = "; +";
-
             #binding-cells = <0>;
             bindings = <&kp SEMICOLON>, <&kp JP_PLUS>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_CLN_AST: jis_CLN_AST {
             compatible = "zmk,behavior-mod-morph";
             label = ": *";
-
             #binding-cells = <0>;
             bindings = <&kp JP_COLON>, <&kp JP_ASTERISK>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_RBK_RBT: jis_RBK_RBT {
             compatible = "zmk,behavior-mod-morph";
             label = "] }";
-
             #binding-cells = <0>;
             bindings = <&kp JP_RBRACKET>, <&kp JP_RBRACE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_YEN_UNS: jis_YEN_UNS {
             compatible = "zmk,behavior-mod-morph";
             label = "\ _";
-
             #binding-cells = <0>;
             bindings = <&kp JP_YEN>, <&kp JP_UNDERSCORE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_DQT_SQT: jis_DQT_SQT {
             compatible = "zmk,behavior-mod-morph";
             label = "DQ SQ";
-
             #binding-cells = <0>;
             bindings = <&kp JP_DQUOTE>, <&kp JP_QUOTE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_AMP_PIP: jis_AMP_PIP {
             compatible = "zmk,behavior-mod-morph";
             label = "& |";
-
             #binding-cells = <0>;
             bindings = <&kp JP_AMPERSAND>, <&kp JP_PIPE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_SQT_DQT: jis_SQT_DQT {
             compatible = "zmk,behavior-mod-morph";
             label = "QT DQT";
-
             #binding-cells = <0>;
             bindings = <&kp JP_QUOTE>, <&kp JP_DQUOTE>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_LPR_LST: jis_LPR_LST {
             compatible = "zmk,behavior-mod-morph";
             label = "LKAKKO LT";
-
             #binding-cells = <0>;
             bindings = <&kp JP_LPAREN>, <&kp LESS_THAN>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_RPR_GTT: jis_RPR_GTT {
             compatible = "zmk,behavior-mod-morph";
             label = "RKAKKO GT";
-
             #binding-cells = <0>;
             bindings = <&kp JP_RPAREN>, <&kp GREATER_THAN>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_AST_CLN: jis_AST_CLN {
             compatible = "zmk,behavior-mod-morph";
             label = "* :";
-
             #binding-cells = <0>;
             bindings = <&kp JP_ASTERISK>, <&kp JP_COLON>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
     };
 
     keymap {
@@ -278,14 +277,14 @@
 
         major_symbols {
             bindings = <
-&kp EXCLAMATION  &jis_DQT_SQT       &kp HASH  &kp DOLLAR  &kp PERCENT                                        &jis_LPR_LST        &jis_RPR_GTT  &kp MINUS       &jis_CRT_TLD    &jis_YEN_PIP
-&trans           &trans             &trans    &trans      &trans         &trans             &jis_SQT_DQT     &kp SQT             &trans        &jis_CLN_AST    &jis_AT_BKQ     &jis_LBK_LBT
-&trans           &trans             &trans    &trans      &trans         &kp LG(LA(K))      &jis_YEN_UNS     &trans              &trans        &trans          &jis_CLN_AST    &jis_RBK_RBT
-&trans           &trans             &trans    &trans      &trans         &trans             &trans           &trans                                                            &jis_YEN_UNS
+&kp EXCLAMATION  &jis_DQT_SQT  &kp HASH  &kp DOLLAR  &kp PERCENT                                   &jis_LPR_LST  &jis_RPR_GTT  &kp MINUS     &jis_CRT_TLD  &jis_YEN_PIP
+&trans           &trans        &trans    &trans      &trans       &trans             &jis_SQT_DQT  &kp SQT       &trans        &jis_CLN_AST  &jis_AT_BKQ   &jis_LBK_LBT
+&trans           &trans        &trans    &trans      &trans       &kp LG(LA(K))      &jis_YEN_UNS  &trans        &trans        &trans        &jis_CLN_AST  &jis_RBK_RBT
+&trans           &trans        &trans    &trans      &trans       &trans             &trans        &trans                                                  &jis_YEN_UNS
             >;
         };
 
-        NUM {
+        func_number {
             bindings = <
 &kp F1   &kp F2   &kp F3               &kp F4      &kp F5                               &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PERCENT
 &kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &jis_AST_CLN  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
@@ -296,7 +295,7 @@
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
-        ARROW {
+        arrow {
             bindings = <
 &kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &kp HOME  &kp UP    &kp PAGE_UP    &trans
 &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT      &trans
@@ -307,7 +306,7 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        MOUSE {
+        mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
@@ -318,7 +317,7 @@
             sensor-bindings = <&inc_dec_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN>;
         };
 
-        layer_6 {
+        bluetooth {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
