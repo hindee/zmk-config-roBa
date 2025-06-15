@@ -50,8 +50,8 @@ layers:
   - '#'
   - $
   - '%'
-  - '&jis_LPR_LST'
-  - '&jis_RPR_GTT'
+  - {t: '*', s: <}
+  - {t: (, s: '>'}
   - '-'
   - {t: '=', s: +}
   - {t: '0x89', s: Sft+0x89}
@@ -61,7 +61,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&jis_SQT_DQT'
+  - {t: '&', s: '@'}
   - ''''
   - {t: ▽, type: trans}
   - {t: '''', s: '"'}
