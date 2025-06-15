@@ -212,46 +212,52 @@
 
             #binding-cells = <0>;
             bindings = <&kp JP_DQUOTE>, <&kp JP_QUOTE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_AMP_PIP: jis_AMP_PIP {
-            compatible = "zmk,behavior-key-press";
+            compatible = "zmk,behavior-mod-morph";
             label = "& |";
 
             #binding-cells = <0>;
             bindings = <&kp JP_AMPERSAND>, <&kp JP_PIPE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_SQT_DQT: jis_SQT_DQT {
-            compatible = "zmk,behavior-key-press";
+            compatible = "zmk,behavior-mod-morph";
             label = "' \"";
 
             #binding-cells = <0>;
             bindings = <&kp JP_QUOTE>, <&kp JP_DQUOTE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_LPR_LST: jis_LPR_LST {
-            compatible = "zmk,behavior-key-press";
+            compatible = "zmk,behavior-mod-morph";
             label = "( <";
 
             #binding-cells = <0>;
             bindings = <&kp JP_LPAREN>, <&kp LESS_THAN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_RPR_GTT: jis_RPR_GTT {
-            compatible = "zmk,behavior-key-press";
+            compatible = "zmk,behavior-mod-morph";
             label = ") >";
 
             #binding-cells = <0>;
             bindings = <&kp JP_RPAREN>, <&kp GREATER_THAN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_AST_CLN: jis_AST_CLN {
-            compatible = "zmk,behavior-key-press";
+            compatible = "zmk,behavior-mod-morph";
             label = "* :";
 
             #binding-cells = <0>;
             bindings = <&kp JP_ASTERISK>, <&kp JP_COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
     };
