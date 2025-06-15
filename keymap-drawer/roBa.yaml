@@ -46,48 +46,48 @@ layers:
   - {t: DEL, h: RIGHT CONTROL}
   major_symbols:
   - '!'
-  - '"'
+  - '@'
   - '#'
   - $
   - '%'
+  - '*'
   - (
-  - )
   - '-'
-  - '~'
-  - '|'
+  - +
+  - Sft+0x89
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - ^
+  - {t: ▽, type: trans}
   - '&'
-  - {t: ▽, type: trans}
-  - Sft+`
   - ''''
-  - +
-  - '*'
-  - '@'
-  - '['
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Gui+Alt+K
-  - \
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ':'
+  - '"'
+  - JP AT SIGN
   - ']'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Gui+Alt+K
+  - '0x89'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - _
+  - ''''
+  - JP RRACKET
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+0x87
   '6':
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
