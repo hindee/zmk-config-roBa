@@ -46,48 +46,48 @@ layers:
   - {t: DEL, h: RIGHT CONTROL}
   major_symbols:
   - '!'
-  - '@'
+  - '&jis_DQT'
   - '#'
   - $
   - '%'
-  - '*'
-  - (
+  - '&jis_LPR'
+  - '&jis_RPR'
   - '-'
-  - +
-  - Sft+0x89
+  - {t: '=', s: +}
+  - {t: '0x89', s: Sft+0x89}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ^
   - {t: ▽, type: trans}
-  - '&'
+  - {t: ▽, type: trans}
+  - '&jis_QUT'
   - ''''
-  - ':'
-  - '"'
-  - '['
-  - ']'
+  - {t: ▽, type: trans}
+  - {t: '''', s: '"'}
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Gui+Alt+K
-  - '0x89'
+  - {t: '0x89', s: Sft+0x87}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''''
-  - \
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '''', s: '"'}
+  - {t: \, s: '|'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+0x87
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '0x89', s: Sft+0x87}
   '6':
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
