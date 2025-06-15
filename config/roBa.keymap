@@ -206,7 +206,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        jis_DQT: jis_DQT_SQT {
+        jis_DQT_SQT: jis_DQT_SQT {
             compatible = "zmk,behavior-mod-morph";
             label = "DQ SQ";
 
@@ -214,7 +214,7 @@
             bindings = <&kp JP_DQUOTE>, <&kp JP_QUOTE>;
         };
 
-        jis_AMP: jis_AMP_PIP {
+        jis_AMP_PIP: jis_AMP_PIP {
             compatible = "zmk,behavior-key-press";
             label = "& |";
 
