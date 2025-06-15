@@ -46,7 +46,7 @@ layers:
   - {t: DEL, h: RIGHT CONTROL}
   major_symbols:
   - '!'
-  - '&jis_DQT_SQT'
+  - {t: '@', s: '&'}
   - '#'
   - $
   - '%'
