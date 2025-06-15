@@ -226,7 +226,7 @@
 
         jis_SQT_DQT: jis_SQT_DQT {
             compatible = "zmk,behavior-mod-morph";
-            label = "' \"";
+            label = "QT DQT";
 
             #binding-cells = <0>;
             bindings = <&kp JP_QUOTE>, <&kp JP_DQUOTE>;
@@ -235,7 +235,7 @@
 
         jis_LPR_LST: jis_LPR_LST {
             compatible = "zmk,behavior-mod-morph";
-            label = "( <";
+            label = "LKAKKO LT";
 
             #binding-cells = <0>;
             bindings = <&kp JP_LPAREN>, <&kp LESS_THAN>;
@@ -244,7 +244,7 @@
 
         jis_RPR_GTT: jis_RPR_GTT {
             compatible = "zmk,behavior-mod-morph";
-            label = ") >";
+            label = "RKAKKO GT";
 
             #binding-cells = <0>;
             bindings = <&kp JP_RPAREN>, <&kp GREATER_THAN>;
