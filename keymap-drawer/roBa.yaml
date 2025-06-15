@@ -65,7 +65,7 @@ layers:
   - ''''
   - ':'
   - '"'
-  - JP AT SIGN
+  - '['
   - ']'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
