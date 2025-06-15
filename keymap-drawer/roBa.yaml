@@ -46,12 +46,12 @@ layers:
   - {t: DEL, h: RIGHT CONTROL}
   major_symbols:
   - '!'
-  - '&jis_DQT'
+  - '&jis_DQT_SQT'
   - '#'
   - $
   - '%'
-  - '&jis_LPR'
-  - '&jis_RPR'
+  - '&jis_LPR_LST'
+  - '&jis_RPR_GTT'
   - '-'
   - {t: '=', s: +}
   - {t: '0x89', s: Sft+0x89}
@@ -61,7 +61,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&jis_QUT'
+  - '&jis_SQT_DQT'
   - ''''
   - {t: ▽, type: trans}
   - {t: '''', s: '"'}
