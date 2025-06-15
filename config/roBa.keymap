@@ -153,7 +153,7 @@
             bindings = <
 &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH  &kp DOLLAR  &kp PERCENT                                             &kp JP_LPAREN  &kp JP_RPAREN  &kp MINUS     &kp JP_TILDE    &kp JP_PIPE
 &trans           &trans             &trans    &trans      &kp JP_AMPERSAND  &trans             &kp JP_QUOTE         &kp SQT               &kp JP_PLUS               &kp JP_ASTERISK  &kp JP_AT  &kp JP_LBRACKET
-&trans           &trans             &trans    &trans      &trans         &kp LG(LA(K))      &kp JP_YEN  &trans                &trans                 &trans        &kp JP_COLON    &kp JP_RRACKET
+&trans           &trans             &trans    &trans      &trans         &kp LG(LA(K))      &kp JP_YEN  &trans                &trans                 &trans        &kp JP_COLON    &kp JP_RBRACKET
 &trans           &trans             &trans    &trans      &trans         &trans             &trans                &trans                                                                  &kp JP_UNDERSCORE
             >;
         };
