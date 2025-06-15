@@ -206,52 +206,52 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        jis_DQT: jis_DQT {
-            compatible = "zmk,behavior-key-press";
-            label = "\"";
+        jis_DQT: jis_DQT_SQT {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DQ SQ";
 
             #binding-cells = <0>;
-            bindings = <&kp JP_DQUOTE>;
+            bindings = <&kp JP_DQUOTE>, <&kp JP_QUOTE>;
         };
 
-        jis_AMP: jis_AMP {
+        jis_AMP: jis_AMP_PIP {
             compatible = "zmk,behavior-key-press";
-            label = "&";
+            label = "& |";
 
             #binding-cells = <0>;
-            bindings = <&kp JP_AMPERSAND>;
+            bindings = <&kp JP_AMPERSAND>, <&kp JP_PIPE>;
         };
 
-        jis_QUT: jis_QUT {
+        jis_QUT: jis_SQT_DQT {
             compatible = "zmk,behavior-key-press";
-            label = "'";
+            label = "' \"";
 
             #binding-cells = <0>;
-            bindings = <&kp JP_QUOTE>;
+            bindings = <&kp JP_QUOTE>, <&kp JP_DQUOTE>;
         };
 
-        jis_LPR: jis_LPR {
+        jis_LPR_LST: jis_LPR_LST {
             compatible = "zmk,behavior-key-press";
-            label = "(";
+            label = "( <";
 
             #binding-cells = <0>;
-            bindings = <&kp JP_LPAREN>;
+            bindings = <&kp JP_LPAREN>, <&kp LESS_THAN>;
         };
 
-        jis_RPR: jis_RPR {
+        jis_RPR_GTT: jis_RPR_GTT {
             compatible = "zmk,behavior-key-press";
-            label = ")";
+            label = ") >";
 
             #binding-cells = <0>;
-            bindings = <&kp JP_RPAREN>;
+            bindings = <&kp JP_RPAREN>, <&kp GREATER_THAN>;
         };
 
-        jis_AST: jis_AST {
+        jis_AST_CLN: jis_AST_CLN {
             compatible = "zmk,behavior-key-press";
-            label = "*";
+            label = "* :";
 
             #binding-cells = <0>;
-            bindings = <&kp JP_ASTERISK>;
+            bindings = <&kp JP_ASTERISK>, <&kp JP_COLON>;
         };
 
     };
@@ -272,8 +272,8 @@
 
         major_symbols {
             bindings = <
-&kp EXCLAMATION  &jis_DQT  &kp HASH  &kp DOLLAR  &kp PERCENT                                                 &jis_LPR            &jis_RPR      &kp MINUS       &jis_CRT_TLD    &jis_YEN_PIP
-&trans           &trans             &trans    &trans      &trans         &trans             &jis_QUT         &kp SQT             &trans        &jis_CLN_AST    &jis_AT_BKQ     &jis_LBK_LBT
+&kp EXCLAMATION  &jis_DQT_SQT       &kp HASH  &kp DOLLAR  &kp PERCENT                                        &jis_LPR_LST        &jis_RPR_GTT  &kp MINUS       &jis_CRT_TLD    &jis_YEN_PIP
+&trans           &trans             &trans    &trans      &trans         &trans             &jis_SQT_DQT     &kp SQT             &trans        &jis_CLN_AST    &jis_AT_BKQ     &jis_LBK_LBT
 &trans           &trans             &trans    &trans      &trans         &kp LG(LA(K))      &jis_YEN_UNS     &trans              &trans        &trans          &jis_CLN_AST    &jis_RBK_RBT
 &trans           &trans             &trans    &trans      &trans         &trans             &trans           &trans                                                            &jis_YEN_UNS
             >;
@@ -282,7 +282,7 @@
         NUM {
             bindings = <
 &kp F1   &kp F2   &kp F3               &kp F4      &kp F5                               &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PERCENT
-&kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &jis_AST      &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
+&kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &jis_AST_CLN  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
 &kp F11  &kp F12  &kp PRINTSCREEN      &kp INSERT  &kp HOME  &kp END      &kp SLASH     &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
 &trans   &trans   &kp LA(PRINTSCREEN)  &trans      &trans    &trans       &trans        &trans                                                  &jis_YEN_PIP
             >;
