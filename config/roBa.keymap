@@ -222,7 +222,7 @@
             bindings = <&kp JP_AMPERSAND>, <&kp JP_PIPE>;
         };
 
-        jis_QUT: jis_SQT_DQT {
+        jis_SQT_DQT: jis_SQT_DQT {
             compatible = "zmk,behavior-key-press";
             label = "' \"";
 
