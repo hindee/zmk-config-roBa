@@ -1,14 +1,45 @@
 
 import re
 
+# 定義を辞書に格納
+us_to_jis = {
+    '@': '"',
+    '^': '&',
+    '&amp;': "'",
+    '_': '=',
+    '=': '^',
+    '0x89': '¥',
+    ':': '+',
+    '+': '~',
+    'Sft+0x89': '|',
+    '[': '@',
+    '\'': ':',
+    '"': '*',
+    '{': '`',
+    'Sft+0x87': '_',
+    ']': '[',
+    '`': ']',
+    '*': '(',
+    '(': ')',
+    '}': '{',
+    '|': '}',
+    'LANGUAGE_1': 'かな',
+    'LANGUAGE_2': '英数',
+    '~': '半/全'
+}
+
 # SVGファイルを読み込む
-with open('keymap-drawer/roBa.svg', 'r', encoding='utf-8') as file:
-    svg_content = file.read()
+with open('roBa.svg', 'r', encoding='utf-8') as file:
+    svg_data = file.read()
 
-# キー画像部分の"^"を"&"に置換する
-# ここでは、キー画像部分が<text class="key">タグで囲まれていると仮定
-svg_content = re.sub(r'(<text class="key">)\^', r'\1&', svg_content)
+# 定義に基づいて置き換えを行う
+for us_key, jis_value in sorted(us_to_jis.items(), key=lambda x: -len(x[0])):
+    pattern = f'>{re.escape(us_key)}<'
+    replacement = f'>{jis_value}<'
+    svg_data = re.sub(pattern, replacement, svg_data)
 
-# 変更後のSVGファイルを書き込む
-with open('keymap-drawer/roBa_modified.svg', 'w', encoding='utf-8') as file:
-    file.write(svg_content)
+# 置き換え後のSVGデータを保存する
+with open('roBa_jis.svg', 'w', encoding='utf-8') as file:
+    file.write(svg_data)
+
+print("置き換えが完了しました。")
