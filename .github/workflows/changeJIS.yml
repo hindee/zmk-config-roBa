@@ -1,8 +1,10 @@
 name: JIS Keymap SVG Conversion
 
 on:
-  push:
-    paths:
+  workflow_dispatch:
+  # push時に自動で実行する場合は、以下のコメントアウトを外す
+  push:
+    paths:
       - "keymap-drawer/roBa.svg"
  
 jobs:
