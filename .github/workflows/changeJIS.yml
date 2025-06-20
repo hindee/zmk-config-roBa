@@ -1,19 +1,16 @@
-
 name: JIS Keymap SVG Conversion
 
 on:
   push:
     paths:
       - keymap-drawer/roBa.svg
-
+ 
 jobs:
   convert-keymap-svg:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Convert keymap SVG to JIS
-      run: |
-        python convert_keymap_svg_to_jis.py
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Convert keymap SVG to JIS
+        run: |
+          python convert_keymap_svg_to_jis.py
