@@ -3,7 +3,7 @@ name: JIS Keymap SVG Conversion
 on:
   push:
     paths:
-      - keymap-drawer/roBa.svg
+      - "keymap-drawer/roBa.svg"
  
 jobs:
   convert-keymap-svg:
@@ -13,4 +13,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Convert keymap SVG to JIS
         run: |
-          python convert_keymap_svg_to_jis.py
+          python keymap-drawer/convert_keymap_svg_to_jis.py
+
