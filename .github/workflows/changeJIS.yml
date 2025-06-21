@@ -16,3 +16,8 @@ jobs:
       - name: Convert keymap SVG to JIS
         run: |
           python keymap-drawer/convert_keymap_svg_to_jis.py
+      - name: Upload SVG artifact
+          uses: actions/upload-artifact@v4
+          with:
+            name: roBa_jis-svg
+            path: keymap-drawer/roBa_jis.svg
