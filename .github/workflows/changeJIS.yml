@@ -25,7 +25,7 @@ jobs:
         run: python keymap-drawer/convert_keymap_svg_to_jis.py
 
       - name: Set up GitHub CLI
-        uses: cli/cli-action@v2
+        uses: actions/setup-gh@v4
 
       - name: Create GitHub Release
         id: create_release
