@@ -1,4 +1,5 @@
 import re
+import html
 
 # 定義を辞書に格納
 us_to_jis = {
@@ -34,10 +35,11 @@ with open('keymap-drawer/roBa.svg', 'r', encoding='utf-8') as file:
 
 # 定義に基づいて置き換えを行う
 for us_key, jis_value in sorted(us_to_jis.items(), key=lambda x: -len(x[0])):
+    # jis_value を SVG/XMLエスケープ
+    escaped_jis_value = html.escape(jis_value, quote=True)
     pattern = f'>{re.escape(us_key)}<'
-    replacement = f'>{jis_value}<'
+    replacement = f'>{escaped_jis_value}<'
     svg_data = re.sub(pattern, replacement, svg_data)
-    
 
 # 置き換え後のSVGデータを保存する
 with open('keymap-drawer/roBa.svg', 'w', encoding='utf-8') as file:
