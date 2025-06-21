@@ -24,16 +24,10 @@ jobs:
       - name: Convert keymap SVG to JIS
         run: python keymap-drawer/convert_keymap_svg_to_jis.py
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh
-
-      - name: Create GitHub Release
+      - name: Commit and push updated SVG
         run: |
-          gh release create v1.0.0 \
-            keymap-drawer/roBa.svg \
-            --title "Release v1.0.0" \
-            --notes "Automated release for JIS keymap SVG conversion." \
-            --latest \
-            --repo ${{ github.repository }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git add keymap-drawer/roBa.svg
+          git commit -m "Update roBa.svg (自動変換 by workflow)" || echo "No changes to commit"
+          git push
