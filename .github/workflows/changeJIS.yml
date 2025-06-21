@@ -1,19 +1,18 @@
-name: JIS Keymap SVG Conversion
+jname: JIS Keymap SVG Conversion
 
 on:
   workflow_dispatch:
   # push時に自動で実行する場合は、以下のコメントアウトを外す
   push:
     paths:
-      - "keymap-drawer/roBa.svg"
- 
+      - "keymap-drawer/roBa.svg"
+
 jobs:
   convert-keymap-svg:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v2
       - name: Convert keymap SVG to JIS
         run: |
           python keymap-drawer/convert_keymap_svg_to_jis.py
-
