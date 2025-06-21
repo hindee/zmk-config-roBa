@@ -39,7 +39,7 @@ for us_key, jis_value in sorted(us_to_jis.items(), key=lambda x: -len(x[0])):
     
 
 # 置き換え後のSVGデータを保存する
-with open('keymap-drawer/roBa_jis.svg', 'w', encoding='utf-8') as file:
+with open('keymap-drawer/roBa.svg', 'w', encoding='utf-8') as file:
     file.write(svg_data)
 
 print("置き換えが完了しました。")
