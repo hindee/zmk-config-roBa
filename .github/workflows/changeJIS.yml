@@ -7,17 +7,16 @@ on:
       paths:
         - "keymap-drawer/roBa.svg"
 
-
 jobs:
-  convert-keymap-svg:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+  convert-keymap-svg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Convert keymap SVG to JIS
-        run: |
-          python keymap-drawer/convert_keymap_svg_to_jis.py
+      - name: Convert keymap SVG to JIS
+        run: |
+          python keymap-drawer/convert_keymap_svg_to_jis.py
 
       - name: Create Release
         id: create_release
@@ -28,7 +27,7 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload SVG artifact
+      - name: Upload SVG artifact
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
