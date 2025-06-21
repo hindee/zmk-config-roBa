@@ -1,20 +1,40 @@
-name: JIS Keymap SVG Conversion
+name: "Draw Keymap and Convert JIS"
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - "keymap-drawer/roBa.svg"
+      - "config/roBa.keymap"
+      - "keymap_drawer.config.yaml"
+      - "config/roBa.dtsi"
 
 jobs:
-  convert-keymap-svg:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@f9cf9d3677368a7fb1dc505c51b8156fafa66fe2
+    permissions:
+      contents: write
+    with:
+      commit_message: "[Draw] ${{ github.event.head_commit.message || 'Update keymap drawing' }}"
+      amend_commit: false
+      keymap_patterns: "config/*.keymap"
+      json_path: "config"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      destination: "both"
+
+  convert-jis:
+    needs: draw
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      # 必要ならここで権限修正
+      - name: Ensure keymap-drawer/roBa.svg is writable
+        run: |
+          chmod +w keymap-drawer/roBa.svg || true
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,5 +49,5 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git add keymap-drawer/roBa.svg
-          git commit -m "Update roBa.svg (自動変換 by workflow)" || echo "No changes to commit"
+          git commit -m "Update roBa.svg (自動JIS変換 by workflow)" || echo "No changes to commit"
           git push
