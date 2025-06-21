@@ -10,7 +10,7 @@ jobs:
   convert-keymap-svg:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # release作成とアセットアップロードに必要
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -27,11 +27,7 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get install gh
 
-      - name: Set up GitHub CLI
-        uses: actions/setup-gh@v3
-
       - name: Create GitHub Release
-        id: create_release
         run: |
           gh release create v1.0.0 \
             keymap-drawer/roBa.svg \
