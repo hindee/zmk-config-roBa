@@ -24,6 +24,9 @@ jobs:
       - name: Convert keymap SVG to JIS
         run: python keymap-drawer/convert_keymap_svg_to_jis.py
 
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh
+
       - name: Set up GitHub CLI
         uses: actions/setup-gh@v3
 
