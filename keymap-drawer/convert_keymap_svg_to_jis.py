@@ -33,7 +33,7 @@ with open('roBa.svg', 'r', encoding='utf-8') as file:
 
 # 定義に基づいて置き換えを行う
 for us_key, jis_value in sorted(us_to_jis.items(), key=lambda x: -len(x[0])):
-    pattern = f'>{re.escape(us_key)}<'
+    pattern = f'>{us_key}<'
     replacement = f'>{jis_value}<'
     svg_data = re.sub(pattern, replacement, svg_data)
 
