@@ -83,7 +83,7 @@
             bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
         };
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
@@ -237,7 +237,7 @@
 
         major_symbols {
             bindings = <
-&kp EXCLAMATION  &jis_DQT_SQT  &kp HASH  &kp DOLLAR  &kp PERCENT                                    &jis_LPR_LST  &jis_RPR_GTT  &kp MINUS  &jis_CRT_TLD  &jis_YEN_PIP
+&kp EXCLAMATION  &kp AT        &kp HASH  &kp DOLLAR  &kp PERCENT                                    &jis_LPR_LST  &jis_RPR_GTT  &kp MINUS  &jis_CRT_TLD  &jis_YEN_PIP
 &trans           &trans        &trans    &trans      &jis_AMP_PIP  &trans             &jis_SQT_DQT  &kp SQT       &trans        &trans     &jis_AT_BKQ   &jis_LBK_LBT
 &trans           &trans        &trans    &trans      &trans        &kp LG(LA(K))      &jis_YEN_UNS  &trans        &trans        &trans     &jis_CLN_AST  &jis_RBK_RBT
 &trans           &trans        &trans    &trans      &trans        &trans             &trans        &trans                                               &jis_YEN_UNS
