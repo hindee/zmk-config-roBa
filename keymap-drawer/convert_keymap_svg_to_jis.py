@@ -4,12 +4,12 @@ import html
 # 定義を辞書に格納
 us_to_jis = {
     '"': '*',       # DOUBLE_QUOTES → *
-    '&amp;': "&apos;",       # AMPERSAND → '
-    "&aposj;": ':',       # SINGLE_QUOTE → :
-    '=': '^',       # EQUAL → ^
-    '^': '&amp;',       # CARET → &
+    '&amp;': "'",       # AMPERSAND → '
+    "&apos;": ':',       # SINGLE_QUOTE → :
+    '=': '^',       # E;QUAL → ^
+    '^': '&',       # CARET → &
     'Sft+0x87': '_',       # LS(0x87) or 0x89 → _
-    '0x89': '_',  # 0x89 → _
+    '0x89': '\',  # 0x89 → _
     '+': '~',       # PLUS → ~
     '~': '半角/全角', # GRAVE → 半角/全角
     '|': '}',       # PIPE → }
