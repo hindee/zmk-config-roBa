@@ -2,7 +2,6 @@ import re
 
 # 定義を辞書に格納
 us_to_jis = {
-us_to_jis = {
     '"': '*',       # DOUBLE_QUOTES → *
     '&': "'",       # AMPERSAND → '
     "'": ':',       # SINGLE_QUOTE → :
