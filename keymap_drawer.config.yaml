@@ -1,0 +1,116 @@
+# keymap_drawer.config.yaml for roBa (customized)
+draw_config:
+  n_columns: 1
+  draw_key_sides: true
+  key_w: 60.0
+  key_h: 56.0
+  split_gap: 30.0
+  combo_w: 28.0
+  combo_h: 26.0
+  key_rx: 2.0 # from 6.0 to 2.0
+  key_ry: 2.0 # from 6.0 to 2.0
+  inner_pad_w: 2.0
+  inner_pad_h: 2.0
+  outer_pad_w: 56.0 # from 40.0 to 56.0
+  outer_pad_h: 56.0
+  line_spacing: 1.2
+  arc_radius: 6.0
+  append_colon_to_layer_header: true
+  small_pad: 2.0
+  svg_extra_style: |
+    svg.keymap {
+      font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
+      font-size: 12px;
+      font-weight: bold;
+      text-rendering: optimizeLegibility;
+    }
+    rect.held, rect.combo.held { fill: #ffc; }
+  shrink_wide_legends: 6
+  glyph_tap_size: 18
+  glyph_hold_size: 15
+  glyph_shifted_size: 15
+  glyphs: {}
+  glyph_urls:
+    tabler: https://unpkg.com/@tabler/icons/icons/outline/{}.svg
+    tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
+    mdi: https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/{}.svg
+    mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
+    material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
+  use_local_cache: true
+parse_config:
+  preprocess: true
+  skip_binding_parsing: false
+  sticky_label: sticky
+  toggle_label: $$mdi:toggle-switch$$
+  trans_legend:
+    t: ▽
+    type: trans
+  zmk_keycode_map:
+    EXCLAMATION: '!'
+    AT: '"' # Changed from '@' to '\"' to match the new requirement
+    HASH: '#'
+    DOLLAR: '$'
+    PERCENT: '%'
+    CARET: '&'  # Changed from '^' to '&' to match the new requirement
+    AMPERSAND: "'" # Changed from '&' to ''' to match the new requirement
+    ASTERISK: '(' # Changed from '*' to '(' to match the new requirement
+    LEFT_PARENTHESIS: ')' # Changed from '(' to ')' to match the new requirement
+    RIGHT_PARENTHESIS: '(' # Changed from ')' to '(' to match the new requirement
+    EQUAL: '^'  # Changed from '=' to '^' to match the new requirement
+    PLUS: '~' # Changed from '+' to '~' to match the new requirement
+    MINUS: '-'
+    UNDERSCORE: '=' # Changed from '_' to '=' to match the new requirement
+    SLASH: '/'
+    QUESTION: '?'
+    BACKSLASH: ']' # Changed from '\\' to ']' to match the new requirement
+    PIPE: '}' # Changed from '|' to '}' to match the new requirement
+    SEMICOLON: ';'
+    COLON: '+' # Changed from ':' to '*' to match the new requirement
+    DOUBLE_QUOTES: '*' # Changed from '"' to '*' to match the new requirement
+    SINGLE_QUOTE: ":" # Changed from "'" to ':' to match the new requirement
+    COMMA: ','
+    PERIOD: '.'
+    LESS_THAN: '<'
+    GREATER_THAN: '>'
+    LEFT_BRACKET: '@' # Changed from '[' to '@' to match the new requirement
+    RIGHT_BRACKET: '[' # Changed from ']' to '[' to match the new requirement
+    LEFT_BRACE: '`' # Changed from '{' to '`' to match the new requirement
+    RIGHT_BRACE: '{' # Changed from '}' to '{' to match the new requirement
+    GRAVE: '半/全' # Changed from '`' to '半/全' to match the new requirement
+    TILDE: '~'
+    SPACE: '␣'
+    BACKSPACE: '⌫'
+    DELETE: '⌦'
+    ENTER: '⏎'
+    TAB: '⇥'
+    ESCAPE: '⎋'
+    LSHIFT: '⇧'
+    RSHIFT: '⇧'
+    LCTRL: 'Ctrl'
+    RCTRL: 'Ctrl'
+    LALT: 'Alt'
+    RALT: 'Alt'
+    LGUI: '⌘'
+    RGUI: '⌘'
+    UP_ARROW: '↑'
+    DOWN_ARROW: '↓'
+    LEFT_ARROW: '←'
+    RIGHT_ARROW: '→'
+    YEN_PIP: '¥' # Changed from 'YEN_PIP' to '¥' to match the new requirement
+    YEN_UNS: '¥' # Changed from 'YEN_UNS' to '¥' to match the new requirement
+    JP_YEN: '¥' # Changed from 'JP_YEN' to '¥' to match the new requirement
+    JP_PIP: '|' # Changed from 'JP_PIP' to '¥' to match the new requirement
+    JP_UNS: '_' # Changed from 'JP_UNS' to '¥
+    # JIS-specific keycodes
+    JPY: '¥'
+    JIS_YEN: '¥'
+    JIS_PIPE: '|'
+    JIS_UNDERSCORE: '_'
+    '0x89': '¥'
+    'LS(0x89)': '|'
+    'LS(0x87)': '_'    # Add more as needed for your layout
+    'INSERT': 'INS'
+    'Gui+Alt+K': MIC # Display as MIC (no quotes, so it won't split into multiple lines)
+  # You can further customize combo positions, glyphs, etc. below as needed
+  # zmk_combos: {}
+  # Example: combo_tab: { align: top, o: 0.1, arc_scale: 1.03 }
