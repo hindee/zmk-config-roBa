@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: roBa}
 layers:
   default:
-  - {t: '&to_layer_0 Q', h: default}
+  - Q
   - W
   - E
   - R
@@ -11,19 +11,19 @@ layers:
   - I
   - O
   - P
-  - {t: '&to_layer_0 A', h: major_symbols}
+  - {t: '&to_layer_0 A', h: symbols}
   - S
   - D
   - F
   - G
   - '&mkp MB1'
-  - Sft+-
+  - ESC
   - H
   - J
   - K
   - L
-  - {t: '&to_layer_0 SEMICOLON', h: '4'}
-  - {t: Z, h: LSHIFT}
+  - {t: '&to_layer_0 SEMICOLON', h: mouse}
+  - {t: Z, h: ⇧}
   - X
   - C
   - V
@@ -35,70 +35,50 @@ layers:
   - ','
   - .
   - {t: /, h: RIGHT SHIFT}
-  - LCTRL
+  - Ctrl
   - LEFT WIN
   - LEFT ALT
-  - {t: INT MUHENKAN, h: LSHIFT}
-  - {t: SPACE, h: '6'}
-  - {t: '&to_layer_0 INT_HENKAN', h: ARROW}
-  - BACKSPACE
-  - {t: ENTER, h: major_symbols}
+  - {t: INT MUHENKAN, h: ⇧}
+  - {t: ␣, h: funcs_numpad}
+  - {t: '&to_layer_0 INT_HENKAN', h: arrow}
+  - ⌫
+  - {t: ⏎, h: symbols}
   - {t: DEL, h: RIGHT CONTROL}
-  major_symbols:
+  symbols:
   - '!'
-  - {t: '@', s: '&'}
+  - '"'
   - '#'
   - $
   - '%'
-  - {t: '*', s: <}
-  - {t: (, s: '>'}
+  - (
+  - )
   - '-'
-  - {t: '=', s: +}
-  - {t: '0x89', s: Sft+0x89}
+  - {t: ^, s: '~'}
+  - {t: ¥, s: '|'}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '&', s: '@'}
+  - '&'
   - ''''
   - {t: ▽, type: trans}
-  - {t: '''', s: '"'}
+  - {t: ▽, type: trans}
+  - {t: '@', s: '`'}
   - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Gui+Alt+K
-  - {t: '0x89', s: Sft+0x87}
+  - INS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '''', s: '"'}
-  - {t: \, s: '|'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '0x89', s: Sft+0x87}
-  '6':
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - {t: ':', s: '*'}
+  - {t: ']', s: '}'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -107,60 +87,80 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ¥, s: _}
+  funcs_numpad:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - +
+  - '7'
+  - '8'
+  - '9'
+  - '%'
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '*'
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - ','
+  - F11
+  - F12
+  - PRINTSCREEN
+  - INS
+  - HOME
+  - END
+  - /
+  - '0'
   - '1'
   - '2'
   - '3'
-  - {type: held}
-  - {t: ▽, type: trans}
-  - '&bootloader'
+  - .
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - BT CLR
-  - {type: held}
-  - {type: held}
-  - {t: ▽, type: trans}
+  - Alt+PRINTSCREEN
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BT CLR ALL
-  ARROW:
-  - ESCAPE
-  - Ctl+Sft+TAB
-  - UP ARROW
-  - Ctl+TAB
-  - {t: ▽, type: trans}
+  - {t: ¥, s: '|'}
+  arrow:
+  - ESC
+  - Ctl+Sft+⇥
+  - ↑
+  - Ctl+⇥
+  - Ctl+PAGE UP
   - {t: ▽, type: trans}
   - HOME
-  - UP
+  - ↑
   - PAGE UP
   - {t: ▽, type: trans}
+  - INS
+  - ←
+  - ↓
+  - →
+  - Ctl+PAGE DOWN
   - HOME
-  - LEFT ARROW
-  - DOWN ARROW
-  - RIGHT ARROW
-  - END
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LEFT
-  - DOWN
-  - RIGHT
+  - ←
+  - ↓
+  - →
   - {t: ▽, type: trans}
   - LEFT SHIFT
-  - Gui+Sft+LEFT ARROW
+  - Gui+Sft+←
   - {t: ▽, type: trans}
-  - Gui+Sft+RIGHT ARROW
+  - Gui+Sft+→
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - END
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - END
@@ -176,7 +176,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '4':
+  mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -220,29 +220,57 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  bluetooth:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - {type: held}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT CLR
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT CLR ALL
 combos:
 - p: [11, 10]
-  k: TAB
+  k: ⇥
 - p: [12, 11]
-  k: Sft+TAB
-- p: [1, 2]
-  k: '"'
-- p: [24, 25]
-  k: '='
+  k: Sft+⇥
 - p: [0, 1]
   k: ESC
   l: [default]
-- p: [8, 9]
-  k: \
-- p: [5, 6]
-  k: (
-- p: [6, 7]
-  k: )
-- p: [20, 19]
-  k: '@'
-- p: [7, 8]
-  k: ^
-- p: [6, 7]
-  k: Sft+~
 - p: [34, 35, 26]
-  k: {t: '&to_layer_0 LC(LA(B))', h: '6'}
+  k: {t: '&to_layer_0 LC(LA(B))', h: bluetooth}
