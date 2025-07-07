@@ -23,7 +23,7 @@ layers:
   - K
   - L
   - {t: '&to_layer_0 SEMICOLON', h: mouse}
-  - {t: Z, h: ⇧}
+  - {t: '&kp_exit_AML Z', h: ⇧}
   - X
   - C
   - V
