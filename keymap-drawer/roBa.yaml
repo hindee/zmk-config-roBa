@@ -265,9 +265,9 @@ layers:
   - {t: ▽, type: trans}
   - BT CLR ALL
 combos:
-- p: [11, 10]
+- p: [1, 2]
   k: ⇥
-- p: [12, 11]
+- p: [2, 3]
   k: Sft+⇥
 - p: [0, 1]
   k: ESC
