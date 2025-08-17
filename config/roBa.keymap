@@ -108,7 +108,9 @@
             bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
-            tapping-term-ms = < 250>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
         };
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
@@ -196,7 +198,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "balanced";
-            quick-tap-ms = <250>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
         };
 
     };
