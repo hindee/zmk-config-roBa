@@ -4,9 +4,12 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
 
+// -------------------- Constants --------------------
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define ZMK_MOUSE_POINTING_SCRL_VAL 100
+
+// Layer Indexes
 #define DEFAULT 0
 #define SYMBOLS 1
 #define FUNCS_NUMPAD 2
@@ -14,8 +17,7 @@
 #define MOUSE 4
 #define BLUETOOTH 5
 
-// OS設定を日本語キーボードのまま使用するための変換定義
-
+// -------------------- JIS Key Conversion Macros (日本語キーボード変換定義) --------------------
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
@@ -40,6 +42,7 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 
+// -------------------- Behavior Parameters --------------------
 &mt {
     flavor = "balanced";
     tapping-term-ms = <250>;
@@ -52,6 +55,7 @@
 };
 
 / {
+    // -------- Combos --------
     combos {
         compatible = "zmk,combos";
 
@@ -59,29 +63,27 @@
             bindings = <&kp TAB>;
             key-positions = <1 2>;
         };
-
         shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <2 3>;
         };
-
         default_esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
-            layers = <0>;
+            layers = <DEFAULT>;
         };
-
         BT_SETTING {
-            bindings = <&lt_to_layer_0 5 LC(LA(B))>;
+            bindings = <&lt_to_layer_0 BLUETOOTH LC(LA(B))>;
             key-positions = <34 35 26>;
         };
     };
 
+    // -------- Macros --------
     macros {
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to DEFAULT &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
         exit_AML: exit_AML {
@@ -92,7 +94,6 @@
             bindings = <&tog_off MOUSE>;
             label = "exit_AML";
         };
-
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -103,12 +104,12 @@
         };
     };
 
+    // -------- Behaviors --------
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             quick-tap-ms = <175>;
@@ -119,25 +120,23 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
             tap-ms = <20>;
         };
 
+        // --- JIS Key Mod Morph Behaviors ---
         jis_CRT_TLD: jis_CRT_TLD {
             compatible = "zmk,behavior-mod-morph";
             label = "^ ~";
             #binding-cells = <0>;
             bindings = <&kp JP_CARET>, <&kp JP_TILDE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_YEN_PIP: jis_YEN_PIP {
             compatible = "zmk,behavior-mod-morph";
-            label = "\ |";
+            label = "\\ |";
             #binding-cells = <0>;
             bindings = <&kp JP_YEN>, <&kp JP_PIPE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -146,7 +145,6 @@
             label = "@ `";
             #binding-cells = <0>;
             bindings = <&kp JP_AT>, <&kp JP_BACKQUOTE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -155,16 +153,14 @@
             label = "CLN AST";
             #binding-cells = <0>;
             bindings = <&kp JP_COLON>, <&kp JP_ASTERISK>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         jis_YEN_UNS: jis_YEN_UNS {
             compatible = "zmk,behavior-mod-morph";
-            label = "\ _";
+            label = "\\ _";
             #binding-cells = <0>;
             bindings = <&kp JP_YEN>, <&kp JP_UNDERSCORE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -173,7 +169,6 @@
             label = "LBK LBT";
             #binding-cells = <0>;
             bindings = <&kp JP_LBRACKET>, <&kp JP_LBRACE>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -182,7 +177,6 @@
             label = "RBK RBT";
             #binding-cells = <0>;
             bindings = <&kp JP_RBRACKET>,<&kp JP_RBRACE> ;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         tog_off: toggle_layer_off {
@@ -196,16 +190,15 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MT_exit_AML_ON_TAP";
             bindings = <&kp>, <&kp_exit_AML>;
-
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "balanced";
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
         };
-
     };
 
+    // -------- Keymaps --------
     keymap {
         compatible = "zmk,keymap";
 
@@ -216,7 +209,6 @@
 &mt_exit_AML_on_tap LSHIFT Z        &kp X         &kp C         &kp V                    &kp B        &kp LSHFT                        &kp RSHFT      &kp N        &kp M  &kp COMMA  &kp PERIOD &mt RIGHT_SHIFT SLASH
 &kp LCTRL           &kp LEFT_WIN  &kp LEFT_ALT  &mt LSHIFT INT_MUHENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_HENKAN      &kp BACKSPACE  &lt 1 ENTER                               &mt RIGHT_CONTROL DEL
             >;
-
             sensor-bindings = <&scroll_up_down>;
         };
 
@@ -235,8 +227,7 @@
 &kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &kp JP_ASTERISK  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
 &kp F11  &kp F12  &kp PRINTSCREEN      &kp INSERT  &kp HOME  &kp END      &kp SLASH        &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
 &trans   &trans   &kp LA(PRINTSCREEN)  &trans      &trans    &trans       &trans           &trans                                                  &jis_YEN_PIP
-            >;
-
+            >;j
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
@@ -247,7 +238,6 @@
 &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans             &kp END       &trans  &trans  &kp END         &trans          &kp PAGE_DOWN    &trans
 &trans          &trans                  &trans          &trans                   &trans             &trans        &trans  &trans                                                   &trans
             >;
-
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
@@ -258,7 +248,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
-
             sensor-bindings = <&inc_dec_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN>;
         };
 
