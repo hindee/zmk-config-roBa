@@ -227,7 +227,7 @@
 &kp F6   &kp F7   &kp F8               &kp F9      &kp F10   &trans       &kp JP_ASTERISK  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA
 &kp F11  &kp F12  &kp PRINTSCREEN      &kp INSERT  &kp HOME  &kp END      &kp SLASH        &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
 &trans   &trans   &kp LA(PRINTSCREEN)  &trans      &trans    &trans       &trans           &trans                                                  &jis_YEN_PIP
-            >;j
+            >;
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
