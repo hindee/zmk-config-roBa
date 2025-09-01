@@ -38,7 +38,7 @@ layers:
   - Ctrl
   - LEFT WIN
   - LEFT ALT
-  - {t: INT MUHENKAN, h: ⇧}
+  - {t: '&to_layer_0 INT_MUHENKAN', h: symbols}
   - {t: ␣, h: funcs_numpad}
   - {t: '&to_layer_0 INT_HENKAN', h: funcs_numpad}
   - ⌫
