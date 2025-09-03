@@ -64,12 +64,12 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <1 2>;
+            key-positions = <11 12>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <2 3>;
+            key-positions = <12 13>;
         };
 
         default_esc {
@@ -80,7 +80,12 @@
 
         BT_SETTING {
             bindings = <&lt_to_layer_0 6 LC(LA(B))>;
-            key-positions = <34 35 26>;
+            key-positions = <16 28>;
+        };
+
+        MIC {
+            bindings = <&kp LC(LA(K))>;
+            key-positions = <30 7>;
         };
     };
 
