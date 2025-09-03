@@ -281,7 +281,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -291,16 +291,16 @@ layers:
   - '1'
   - '2'
   - '3'
-  - {type: held}
   - {t: ▽, type: trans}
-  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: '&bootloader', type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT CLR
-  - {type: held}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -309,12 +309,14 @@ layers:
   - {t: ▽, type: trans}
   - BT CLR ALL
 combos:
-- p: [1, 2]
+- p: [11, 12]
   k: ⇥
-- p: [2, 3]
+- p: [12, 13]
   k: Sft+⇥
 - p: [0, 1]
   k: ESC
   l: [default]
-- p: [34, 35, 26]
+- p: [16, 28]
   k: {t: '&to_layer_0 LC(LA(B))', h: bluetooth}
+- p: [30, 7]
+  k: Ctl+Alt+K
