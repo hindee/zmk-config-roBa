@@ -66,7 +66,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '@', s: '`'}
-  - {t: '[', s: '{'}
+  - {t: ':', s: '*'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -76,8 +76,8 @@ layers:
   - INS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ':', s: '*'}
+  - _
+  - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -131,7 +131,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ¥, s: '|'}
+  - '&transj'
   arrow:
   - ESC
   - Ctl+Sft+⇥
@@ -318,5 +318,3 @@ combos:
   l: [default]
 - p: [16, 28]
   k: {t: '&to_layer_0 LC(LA(B))', h: bluetooth}
-- p: [30, 7]
-  k: Ctl+Alt+K
