@@ -30,7 +30,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        input-processors = <&zip_temp_layer 4 6000>;
+        input-processors = <&zip_temp_layer 4 10000>;
     };
 };
 
