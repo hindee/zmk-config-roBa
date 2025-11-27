@@ -62,7 +62,7 @@
     flavor = "balanced";
 };
 
-&mkp_input_listener { input-processors = <&zip_temp_layer 4 5000>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer 4 8000>; };
 
 / {
     // -------- Combos --------
@@ -189,32 +189,15 @@
             tap-ms = <20>;
         };
 
-        /* Tap-dance (kana toggles) + Hold-to-layer implementation
-         * Implemented as two nodes:
-         *  - a standard tap-dance node that handles 1/2/3 taps
-         *  - a hold-tap node that forwards the hold action to &mo (layer) and
-         *    the tap action to the tap-dance node above.
-         */
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp LS(TAB)>;
 
-        td_kana_td: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp JP_HANZEN>, <&kp JP_KANA>, <&kp JP_HANZEN>;
-        };
-
-        td_kana_hold: td_kana_hold {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-
-            /* first binding is the hold behavior (layer modifier), second is the tap behavior (tap-dance node) */
-            bindings = <&mo>, <&td_kana_td>;
+            tap-ms = <20>;
         };
 
         // --- JIS Key Mod Morph Behaviors ---
-
         jis_CRT_TLD: jis_CRT_TLD {
             compatible = "zmk,behavior-mod-morph";
             label = "^ ~";
@@ -305,10 +288,10 @@
 
         default_layer {
             bindings = <
-&kp Q                         &kp W         &kp E         &kp R                          &kp T                                                        &kp Y        &kp U  &kp I      &kp O       &kp P
-&lt 1 A            &kp S         &kp D         &kp F                          &kp G        &mkp MB1                         &kp ESC        &kp H        &kp J  &kp K      &kp L       &lt 4 SEMICOLON
-&mt_exit_AML LSHIFT Z  &kp X         &kp C         &kp V                          &kp B        &kp LSHIFT                        &kp RSHIFT      &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LCTRL                     &kp LEFT_WIN  &kp LEFT_ALT  &mt_exit_AML LEFT_ALT INT_MUHENKAN  &lt 6 SPACE  &td_kana_hold 2 JP_KANA    &kp BACKSPACE  &lt 3 ENTER                                &mt RIGHT_CONTROL DEL
+&kp Q                  &kp W         &kp E         &kp R                               &kp T                                          &kp Y        &kp U  &kp I      &kp O       &kp P
+&lt 1 A                &kp S         &kp D         &kp F                               &kp G        &mkp MB1           &kp ESC        &kp H        &kp J  &kp K      &kp L       &lt 4 SEMICOLON
+&mt_exit_AML LSHIFT Z  &kp X         &kp C         &kp V                               &kp B        &kp LSHIFT         &kp RSHIFT     &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
+&kp LCTRL              &kp LEFT_WIN  &kp LEFT_ALT  &mt_exit_AML LEFT_ALT INT_MUHENKAN  &lt 6 SPACE  &lt 2 JP_HANZEN    &kp BACKSPACE  &lt 3 ENTER                                &mt RIGHT_CONTROL DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -316,10 +299,10 @@
 
         symbols {
             bindings = <
-&kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH  &kp DOLLAR  &kp PERCENT                                 &kp JP_LPAREN  &kp JP_RPAREN   &kp MINUS          &jis_CRT_TLD  &jis_YEN_PIP
-&trans           &trans         &trans    &trans      &kp JP_AMPERSAND &trans             &kp JP_QUOTE   &jis_LBK_LBT  &jis_RBK_RBT    &kp JP_PLUS        &jis_AT_BKQ   &jis_CLN_AST
-&trans           &trans         &trans    &trans      &trans       &kp DEL                &kp INSERT  &trans         &trans                &kp JP_UNDERSCORE &trans        &trans
-&trans           &trans         &trans    &trans      &trans       &trans             &trans      &trans                                                               &trans
+&kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH  &kp DOLLAR  &kp PERCENT                                       &kp JP_LPAREN  &kp JP_RPAREN   &kp MINUS          &jis_CRT_TLD  &jis_YEN_PIP
+&trans           &trans         &trans    &trans      &kp JP_AMPERSAND &trans             &kp JP_QUOTE  &jis_LBK_LBT   &jis_RBK_RBT    &kp JP_PLUS        &jis_AT_BKQ   &jis_CLN_AST
+&trans           &trans         &trans    &trans      &trans           &kp DEL            &kp INSERT    &trans         &trans          &kp JP_UNDERSCORE  &trans        &trans
+&trans           &trans         &trans    &trans      &trans           &trans             &trans        &trans                                                          &trans
             >;
 
             sensor-bindings = <&scroll_right_left>;
@@ -333,7 +316,7 @@
 &trans   &trans   &kp PRINTSCREEN  &trans      &trans    &trans        &trans     &trans                                   &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&alt_tab>;
         };
 
         arrow {
