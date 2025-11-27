@@ -6,7 +6,7 @@ on:
   push:
     paths:
       - "config/roBa.keymap"
-      - "keymap_drawer.config.yaml"
+      - "keymap-drawer/keymap_drawer.config.yaml"
       - "config/roBa.dtsi"
 
 jobs:
