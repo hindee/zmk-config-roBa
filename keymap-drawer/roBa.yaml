@@ -23,60 +23,60 @@ layers:
   - K
   - L
   - {t: ;, h: mouse}
-  - {t: '&kp_exit_AML Z', h: LSHIFT}
+  - {t: Z, h: ⇧}
   - X
   - C
   - V
   - B
-  - LSHIFT
-  - RSHIFT
+  - ⇧
+  - ⇧
   - N
   - M
   - ','
   - .
   - {t: /, h: RIGHT SHIFT}
-  - LCTRL
-  - LEFT WIN
-  - LEFT ALT
-  - {t: '&kp_exit_AML INT_MUHENKAN', h: LEFT ALT}
-  - {t: SPACE, h: scroll}
-  - {t: '&td_kana_td LANGUAGE_1', h: funcs_numpad}
-  - BACKSPACE
-  - {t: ENTER, h: arrow}
+  - Ctrl
+  - ⌘
+  - Alt
+  - {t: 無変換, h: Alt}
+  - {t: ␣, h: scroll}
+  - {t: 半/全, h: funcs_numpad}
+  - ⌫
+  - {t: ⏎, h: arrow}
   - {t: DEL, h: RIGHT CONTROL}
   symbols:
   - '!'
-  - '@'
+  - '"'
   - '#'
   - $
   - '%'
-  - '*'
   - (
+  - )
   - '-'
-  - {t: '=', s: +}
-  - {t: '0x89', s: Sft+0x89}
+  - {t: ^, s: '~'}
+  - {t: ¥, s: '|'}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ^
-  - {t: ▽, type: trans}
   - '&'
-  - {t: ']', s: '}'}
-  - {t: \, s: '|'}
-  - ':'
+  - {t: ▽, type: trans}
+  - ''''
   - {t: '[', s: '{'}
-  - {t: '''', s: '"'}
+  - {t: ']', s: '}'}
+  - +
+  - {t: '@', s: '`'}
+  - {t: ':', s: '*'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - DEL
-  - INSERT
+  - INS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+0x87
+  - _
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -94,11 +94,11 @@ layers:
   - F3
   - F4
   - F5
-  - '"'
+  - '*'
   - '7'
   - '8'
   - '9'
-  - ':'
+  - +
   - F6
   - F7
   - F8
@@ -116,7 +116,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Gui+Alt+K
+  - MIC
   - {t: ▽, type: trans}
   - '0'
   - '1'
@@ -134,37 +134,37 @@ layers:
   - {t: ▽, type: trans}
   arrow:
   - {t: ▽, type: trans}
-  - Ctl+Sft+TAB
+  - Ctl+Sft+⇥
   - PRINTSCREEN
-  - Ctl+TAB
+  - Ctl+⇥
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - HOME
-  - UP ARROW
+  - ↑
   - PAGE UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Gui+LEFT ARROW
-  - Gui+RIGHT ARROW
-  - Ctl+Gui+LEFT ARROW
-  - Ctl+Gui+RIGHT ARROW
+  - Gui+←
+  - Gui+→
+  - Ctl+Gui+←
+  - Ctl+Gui+→
   - HOME
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT ARROW
-  - DOWN ARROW
-  - RIGHT ARROW
+  - ←
+  - ↓
+  - →
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT SHIFT
-  - Gui+Sft+LEFT ARROW
-  - Gui+Sft+RIGHT ARROW
+  - Gui+Sft+←
+  - Gui+Sft+→
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - END
-  - DOWN ARROW
+  - ↓
   - PAGE DOWN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -313,10 +313,10 @@ combos:
   k: ESC
   l: [default]
 - p: [1, 2]
-  k: TAB
+  k: ⇥
   l: [default]
 - p: [2, 3]
-  k: Sft+TAB
+  k: Sft+⇥
   l: [default]
 - p: [25, 35]
   k: {t: Alt+B, h: bluetooth}
