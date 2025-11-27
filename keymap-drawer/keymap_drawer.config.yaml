@@ -15,17 +15,24 @@ draw_config:
   outer_pad_h: 56.0
   line_spacing: 1.2
   arc_radius: 6.0
+  key_side_pars:
+    rel_x: 0
+    rel_y: 1
+    rel_w: 12
+    rel_h: 10
+    rx: 4
+    ry: 4
   append_colon_to_layer_header: true
   small_pad: 2.0
   svg_extra_style: |
     svg.keymap {
       font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: bold;
       text-rendering: optimizeLegibility;
     }
     rect.held, rect.combo.held { fill: #ffc; }
-  shrink_wide_legends: 6
+  shrink_wide_legends: 7
   glyph_tap_size: 18
   glyph_hold_size: 15
   glyph_shifted_size: 15
@@ -80,7 +87,7 @@ parse_config:
     TILDE: '~'
     SPACE: '␣'
     BACKSPACE: '⌫'
-    DELETE: '⌦'
+    # DEL: '⌦'
     ENTER: '⏎'
     TAB: '⇥'
     ESCAPE: '⎋'
@@ -88,8 +95,8 @@ parse_config:
     RSHIFT: '⇧'
     LCTRL: 'Ctrl'
     RCTRL: 'Ctrl'
-    LALT: 'Alt'
-    RALT: 'Alt'
+    LEFT_ALT: 'Alt'
+    RIGHT_ALT: 'Alt'
     LGUI: '⌘'
     RGUI: '⌘'
     UP_ARROW: '↑'
@@ -110,7 +117,15 @@ parse_config:
     'LS(0x89)': '|'
     'LS(0x87)': '_'    # Add more as needed for your layout
     'INSERT': 'INS'
-    'Gui+Alt+K': MIC # Display as MIC (no quotes, so it won't split into multiple lines)
+    'LG(LA(K))': 'MIC' # Display as MIC
+    'LEFT_WIN': '⌘'
+  raw_binding_map:
+    '&td_kana_hold': {tap: '全/かな',hold: 'funcs_numpad'}
+    
+    '&kp_exit_AML RIGHT_SHIFT': { tap: '/', hold: '⇧' }
+    '&kp_exit_AML INT_MUHENKAN': { tap: '無変換', hold: 'ALT' }
+    '&kp_exit_AML Z': { tap: 'Z', hold: '⇧' }
+    
   # You can further customize combo positions, glyphs, etc. below as needed
   # zmk_combos: {}
   # Example: combo_tab: { align: top, o: 0.1, arc_scale: 1.03 }
