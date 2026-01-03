@@ -248,8 +248,8 @@ rect.held, rect.combo.held { fill: #ffc; }
 <rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key"/>
 <text x="0" y="-1" class="key tap">;</text>
-<a href="#mouse">
-<text x="0" y="24" class="key hold layer-activator">mouse</text>
+<a href="#scroll">
+<text x="0" y="24" class="key hold layer-activator">scroll</text>
 </a></g>
 <g transform="translate(28, 175)" class="key keypos-22">
 <rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -1197,9 +1197,10 @@ rect.held, rect.combo.held { fill: #ffc; }
 <tspan x="0" dy="-0.6em">&amp;mkp</tspan><tspan x="0" dy="1.2em">MB2</tspan>
 </text>
 </g>
-<g transform="translate(729, 119)" class="key held keypos-21">
-<rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key held side"/>
-<rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key held"/>
+<g transform="translate(729, 119)" class="key trans keypos-21">
+<rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key trans side"/>
+<rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key trans"/>
+<text x="0" y="-1" class="key trans tap">▽</text>
 </g>
 <g transform="translate(28, 175)" class="key trans keypos-22">
 <rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key trans side"/>
@@ -1644,10 +1645,9 @@ rect.held, rect.combo.held { fill: #ffc; }
 <rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key trans"/>
 <text x="0" y="-1" class="key trans tap">▽</text>
 </g>
-<g transform="translate(729, 119)" class="key trans keypos-21">
-<rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key trans side"/>
-<rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key trans"/>
-<text x="0" y="-1" class="key trans tap">▽</text>
+<g transform="translate(729, 119)" class="key held keypos-21">
+<rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key held side"/>
+<rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key held"/>
 </g>
 <g transform="translate(28, 175)" class="key trans keypos-22">
 <rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key trans side"/>
@@ -1729,9 +1729,10 @@ rect.held, rect.combo.held { fill: #ffc; }
 <rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key trans"/>
 <text x="0" y="-1" class="key trans tap">▽</text>
 </g>
-<g transform="translate(271, 231) rotate(9.0)" class="key held keypos-38">
-<rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key held side"/>
-<rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key held"/>
+<g transform="translate(271, 231) rotate(9.0)" class="key trans keypos-38">
+<rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key trans side"/>
+<rect rx="4" ry="4" x="-20" y="-22" width="40" height="42" class="key trans"/>
+<text x="0" y="-1" class="key trans tap">▽</text>
 </g>
 <g transform="translate(333, 247) rotate(20.0)" class="key trans keypos-39">
 <rect rx="2" ry="2" x="-26" y="-26" width="52" height="52" class="key trans side"/>
