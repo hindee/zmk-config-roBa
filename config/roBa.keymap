@@ -65,7 +65,7 @@
 &trackball {
     automouse-layer = <4>;
     scroll-layers = <6>;
-}
+};
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 3000>; };
 
