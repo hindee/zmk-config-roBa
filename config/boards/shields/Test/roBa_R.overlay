@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -14,11 +15,23 @@
             ;
 };
 
+&zip_temp_layer {
+    excluded-positions = <
+        18 // J
+        19 // K
+        20 // l
+        21 // ;
+        34 // Ctrl
+    >;
+};
+
 / {
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        input-processors = <&zip_temp_layer 4 10000>;
     };
 };
 
@@ -43,8 +56,6 @@
 
 &xiao_serial { status = "disabled"; };
 
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -59,8 +70,6 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        evt-type = <INPUT_EV_REL>;	scroll-layers = <5>;
-        x-input-code = <INPUT_REL_X>;	};
-        y-input-code = <INPUT_REL_Y>;	};
-    };	
+        scroll-layers = <5>;
+    };
 };
