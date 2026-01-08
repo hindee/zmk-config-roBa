@@ -67,7 +67,7 @@
 
 &trackball {
     cpi = <800>;
-    swap-xy;
+    //swap-xy;
 };
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 3000>; };
