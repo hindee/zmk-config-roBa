@@ -40,9 +40,10 @@ layers:
   - Alt
   - {t: 無変換, h: Alt}
   - {t: ␣, h: scroll}
-  - {t: 半/全, h: funcs_numpad}
+  - {t: 半/全, h: funcs_numpad, s: LANGUAGE 1}
   - ⌫
   - {t: ⏎, h: arrow}
+  - '&TB_none'
   - {t: DEL, h: RIGHT CONTROL}
   symbols:
   - '!'
@@ -87,6 +88,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&TB_none'
   - {t: ▽, type: trans}
   funcs_numpad:
   - F1
@@ -131,6 +133,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&TB_none'
   - {t: ▽, type: trans}
   arrow:
   - {t: ▽, type: trans}
@@ -175,6 +178,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
+  - '&TB_none'
   - {t: ▽, type: trans}
   mouse:
   - {t: ▽, type: trans}
@@ -219,6 +223,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&TB_mouse'
   - {t: ▽, type: trans}
   bluetooth:
   - {t: ▽, type: trans}
@@ -263,6 +268,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&TB_none'
   - {t: ▽, type: trans}
   scroll:
   - {t: ▽, type: trans}
@@ -307,6 +313,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&TB_scroll'
   - {t: ▽, type: trans}
 combos:
 - p: [0, 1]
