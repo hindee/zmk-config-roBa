@@ -1,42 +1,249 @@
-# keymap_drawer.config.yaml for roBa (customized)
+# keymap_drawer.config.yaml for roBa with trackball
 draw_config:
   n_columns: 1
   draw_key_sides: true
+  append_colon_to_layer_header: true
+  small_pad: 4.0
+
+  # キーサイズ・レイアウト
   key_w: 60.0
   key_h: 56.0
   split_gap: 30.0
   combo_w: 28.0
   combo_h: 26.0
-  key_rx: 2.0 # from 6.0 to 2.0
-  key_ry: 2.0 # from 6.0 to 2.0
-  inner_pad_w: 2.0
-  inner_pad_h: 2.0
-  outer_pad_w: 56.0 # from 40.0 to 56.0
+  key_rx: 9.0
+  key_ry: 9.0
+  inner_pad_w: 0.5
+  inner_pad_h: 0.2
+  outer_pad_w: 56.0
   outer_pad_h: 56.0
   line_spacing: 1.2
-  arc_radius: 6.0
+  arc_radius: 10.0
+
+  # キー側面パラメータ
   key_side_pars:
     rel_x: 0
     rel_y: 1
-    rel_w: 12
-    rel_h: 10
-    rx: 4
-    ry: 4
-  append_colon_to_layer_header: true
-  small_pad: 2.0
+    rel_w: 10
+    rel_h: 8
+    rx: 2
+    ry: 2
+
+  # SVGスタイル
   svg_extra_style: |
     svg.keymap {
+      background-color: #444444 !important;
       font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
       font-size: 14px;
       font-weight: bold;
       text-rendering: optimizeLegibility;
     }
-    rect.held, rect.combo.held { fill: #ffc; }
-  shrink_wide_legends: 7
-  glyph_tap_size: 18
-  glyph_hold_size: 15
+    text { fill: #000000; }
+    rect.key {
+      fill: #FFFFFF;
+      stroke: #F9F9F9 !important;
+      stroke-width: 2.0;
+    }
+    rect.held, rect.combo.held {
+      fill: #4FBF8F !important;
+      stroke: #93BF49 !important;
+      stroke-width: 2.0;
+    }
+    rect.key_side {}
+
+    .keypos-37 text,
+    .keypos-38 text,
+    .keypos-39 text,
+    .keypos-40 text,
+    .keypos-41 text {
+      fill: #000000 !important;
+      font-weight: bold;
+      font-size: 13px;
+      text-anchor: middle !important;
+      dominant-baseline: middle !important;
+      paint-order: normal;
+      stroke: none !important;
+    }
+    .keypos-37 rect.key,
+    .keypos-38 rect.key,
+    .keypos-39 rect.key,
+    .keypos-40 rect.key,
+    .keypos-41 rect.key {
+      fill: #D3FF89 !important;
+      stroke: #C3EF79 !important;
+      stroke-width: 2.0;
+    }
+    .keypos-37 .key.held,
+    .keypos-38 .key.held,
+    .keypos-39 .key.held,
+    .keypos-40 .key.held,
+    .keypos-41 .key.held {
+      fill: #4FBF8F !important;
+      stroke: #93BF49 !important;
+      stroke-width: 2.0;
+    }
+
+    /* Trackball */
+    .keypos-42 rect.key,
+    .keypos-42 rect.key_side {
+      display: none !important;
+    }
+    .keypos-42 use[href="#trackball"] {
+      width: 145px !important;
+      height: 90px !important;
+      x: -13px !important;
+      y: -37px !important;
+      transform: scale(1.5) !important;
+    }
+    .keypos-42 text.hold {
+      fill: #000000 !important;
+      font-size: 12px !important;
+      font-weight: bold !important;
+      pointer-events: none;
+      display: block !important;
+      transform: translate(48px, -17px) !important;
+    }
+
+    /* Rotary encoder */
+    .keypos-15 use[href="#rotaryencoder"] {
+      x: -29px !important;
+      y: -38px !important;
+      width: 58px !important;
+      height: 58px !important;
+      transform: scale(0.9) !important;
+    }
+    .keypos-15 rect.key,
+    .keypos-15 rect.key_side {
+      display: none !important;
+    }
+    svg.keymap g.key.keypos-15 rect.key,
+    svg.keymap .keypos-15 rect.key,
+    svg.keymap g.key.keypos-15 rect.key_side,
+    svg.keymap .keypos-15 rect.key_side {
+      display: none !important;
+    }
+    .keypos-15 text.hold {
+      fill: #000000 !important;
+      font-size: 12px !important;
+      font-weight: bold !important;
+      pointer-events: none;
+      transform: translateY(-26px) !important;
+    }
+
+  # レジェンド設定
+  legend_font_size: 12
+  legend_hold_font_size: 10
+  legend_shifted_font_size: 10
+  legend_tap_offset_y: -6
+  legend_hold_offset_y: 10
+  legend_shifted_offset_y: 4
+  legend_max_width_ratio: 0.9
+  legend_max_height_ratio: 0.35
+  legend_line_spacing: 1.1
+  combo_legend_font_size: 10
+  combo_legend_offset_y: 0
+  combo_legend_max_width_ratio: 0.9
+  combo_legend_max_height_ratio: 0.5
+  combo_legend_line_spacing: 1.0
+
+  # グリフ設定
+  glyph_font_size: 20
+  glyph_hold_font_size: 16
+  glyph_shifted_font_size: 16
+  glyph_tap_offset_y: -4
+  glyph_hold_offset_y: 6
+  glyph_shifted_offset_y: 2
+  glyph_max_width_ratio: 2.0
+  glyph_max_height_ratio: 2.0
+  glyph_line_spacing: 1.1
+  shrink_wide_legends: 5
+  glyph_tap_size: 60
+  glyph_hold_size: 60
   glyph_shifted_size: 15
-  glyphs: {}
+
+  # ----- Embedded glyphs -----
+  glyphs:
+    trackball: |
+      <svg id="trackball" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140">
+        <defs>
+          <!-- ユニークIDで衝突回避 -->
+          <linearGradient id="tb-outerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#D0D0D0"/>
+          </linearGradient>
+          <linearGradient id="tb-innerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#F0F0F0"/>
+          </linearGradient>
+          <linearGradient id="tb-greenBall" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#33CC33"/>
+            <stop offset="100%" stop-color="#B3FF66"/>
+          </linearGradient>
+        </defs>
+
+        <!-- 明確な塗りつぶし指定でCSS継承を上書き -->
+        <ellipse cx="90" cy="60" rx="40" ry="40"
+                 fill="url(#tb-greenBall) !important"
+                 transform="scale(1.325581395) rotate(225 90 60)"
+                 style="fill: url(#tb-greenBall) !important;"/>
+
+        <path d="M129 17 Q115 17 115 31 L115 89 Q115 103 129 103 L180 103 Q194 103 194 89 L194 31 Q194 17 180 17 Z"
+              fill="url(#tb-outerGrad) !important"
+              transform="scale(1.325581395)"
+              style="fill: url(#tb-outerGrad) !important;"/>
+
+        <path d="M115 30 C105 50 105 70 115 90 C125 90 125 90 135 90 L170 90 C180 90 180 80 180 80 L180 40 C180 40 180 30 170 30 L135 30 C125 30 125 30 115 30 Z"
+              fill="url(#tb-innerGrad) !important"
+              transform="scale(1.325581395)"
+              style="fill: url(#tb-innerGrad) !important;"/>
+      </svg>
+     
+    rotaryencoder: |
+      <svg xmlns="http://www.w3.org/2000/svg"
+        width="60" height="60"
+        viewBox="-0.5 -0.5 60 60">
+        <defs>
+          <radialGradient id="wheelgrad" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stop-color="#FAFAFA"/>
+            <stop offset="70%" stop-color="#F0F0F0"/>
+            <stop offset="100%" stop-color="#E8E8E8"/>
+          </radialGradient>
+        </defs>
+
+        <circle cx="30" cy="30" r="29.5"
+          fill="url(#wheelgrad)"
+          stroke="#D8D8D8"
+          stroke-width="0.5"/>
+
+        <g stroke="#C8C8C8" stroke-width="1.3" stroke-linecap="round">
+          <line transform="rotate(0 30 30)" x1="30" y1="0" x2="32.12" y2="2.1 2"/>
+          <line transform="rotate(15 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(30 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(45 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(60 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(75 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(90 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(105 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(120 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(135 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(150 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(165 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(180 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(195 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(210 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(225 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(240 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(255 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(270 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(285 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(300 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(315 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(330 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+          <line transform="rotate(345 30 30)" x1="30" y1="0" x2="32.12" y2="2.12"/>
+        </g>
+      </svg>
+
+  # ----- External glyph providers -----
   glyph_urls:
     tabler: https://unpkg.com/@tabler/icons/icons/outline/{}.svg
     tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
@@ -44,50 +251,57 @@ draw_config:
     mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
     material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
   use_local_cache: true
+
+# ======================================================================
+# Parse configuration
+# ======================================================================
+
 parse_config:
   preprocess: true
   skip_binding_parsing: false
   sticky_label: sticky
   toggle_label: $$mdi:toggle-switch$$
+
   trans_legend:
     t: ▽
     type: trans
+
+  # ----- ZMK keycode mapping -----
   zmk_keycode_map:
     EXCLAMATION: '!'
-    AT: '"' # Changed from '@' to '\"' to match the new requirement
+    AT: '"'
     HASH: '#'
     DOLLAR: '$'
     PERCENT: '%'
-    CARET: '&'  # Changed from '^' to '&' to match the new requirement
-    AMPERSAND: "'" # Changed from '&' to ''' to match the new requirement
-    ASTERISK: '(' # Changed from '*' to '(' to match the new requirement
-    LEFT_PARENTHESIS: ')' # Changed from '(' to ')' to match the new requirement
-    RIGHT_PARENTHESIS: '(' # Changed from ')' to '(' to match the new requirement
-    EQUAL: '^'  # Changed from '=' to '^' to match the new requirement
-    PLUS: '~' # Changed from '+' to '~' to match the new requirement
+    CARET: '&'
+    AMPERSAND: "'"
+    ASTERISK: '('
+    LEFT_PARENTHESIS: ')'
+    RIGHT_PARENTHESIS: '('
+    EQUAL: '^'
+    PLUS: '~'
     MINUS: '-'
-    UNDERSCORE: '=' # Changed from '_' to '=' to match the new requirement
+    UNDERSCORE: '='
     SLASH: '/'
     QUESTION: '?'
-    BACKSLASH: ']' # Changed from '\\' to ']' to match the new requirement
-    PIPE: '}' # Changed from '|' to '}' to match the new requirement
+    BACKSLASH: ']'
+    PIPE: '}'
     SEMICOLON: ';'
-    COLON: '+' # Changed from ':' to '*' to match the new requirement
-    DOUBLE_QUOTES: '*' # Changed from '"' to '*' to match the new requirement
-    SINGLE_QUOTE: ":" # Changed from "'" to ':' to match the new requirement
+    COLON: '+'
+    DOUBLE_QUOTES: '*'
+    SINGLE_QUOTE: ':'
     COMMA: ','
     PERIOD: '.'
     LESS_THAN: '<'
     GREATER_THAN: '>'
-    LEFT_BRACKET: '@' # Changed from '[' to '@' to match the new requirement
-    RIGHT_BRACKET: '[' # Changed from ']' to '[' to match the new requirement
-    LEFT_BRACE: '`' # Changed from '{' to '`' to match the new requirement
-    RIGHT_BRACE: '{' # Changed from '}' to '{' to match the new requirement
-    GRAVE: '半/全' # Changed from '`' to '半/全' to match the new requirement
+    LEFT_BRACKET: '@'
+    RIGHT_BRACKET: '['
+    LEFT_BRACE: '`'
+    RIGHT_BRACE: '{'
+    GRAVE: '半/全'
     TILDE: '~'
     SPACE: '␣'
     BACKSPACE: '⌫'
-    # DEL: '⌦'
     ENTER: '⏎'
     TAB: '⇥'
     ESCAPE: '⎋'
@@ -103,29 +317,37 @@ parse_config:
     DOWN_ARROW: '↓'
     LEFT_ARROW: '←'
     RIGHT_ARROW: '→'
-    YEN_PIP: '¥' # Changed from 'YEN_PIP' to '¥' to match the new requirement
-    YEN_UNS: '¥' # Changed from 'YEN_UNS' to '¥' to match the new requirement
-    JP_YEN: '¥' # Changed from 'JP_YEN' to '¥' to match the new requirement
-    JP_PIP: '|' # Changed from 'JP_PIP' to '¥' to match the new requirement
-    JP_UNS: '_' # Changed from 'JP_UNS' to '¥
-    # JIS-specific keycodes
+    YEN_PIP: '¥'
+    YEN_UNS: '¥'
+    JP_YEN: '¥'
+    JP_PIP: '|'
+    JP_UNS: '_'
     JPY: '¥'
     JIS_YEN: '¥'
     JIS_PIPE: '|'
     JIS_UNDERSCORE: '_'
     '0x89': '¥'
     'LS(0x89)': '|'
-    'LS(0x87)': '_'    # Add more as needed for your layout
-    'INSERT': 'INS'
-    'LG(LA(K))': 'MIC' # Display as MIC
-    'LEFT_WIN': '⌘'
+    'LS(0x87)': '_'
+    INSERT: 'INS'
+    'LG(LA(K))': 'MIC'
+    LEFT_WIN: '⌘'
+
+  # ----- Raw bindings for encoders/trackball -----
   raw_binding_map:
-    '&td_kana_hold': {tap: '全/かな',hold: 'funcs_numpad'}
-    
     '&kp_exit_AML RIGHT_SHIFT': { tap: '/', hold: '⇧' }
     '&kp_exit_AML INT_MUHENKAN': { tap: '無変換', hold: 'ALT' }
     '&kp_exit_AML Z': { tap: 'Z', hold: '⇧' }
-    
-  # You can further customize combo positions, glyphs, etc. below as needed
-  # zmk_combos: {}
-  # Example: combo_tab: { align: top, o: 0.1, arc_scale: 1.03 }
+    '&lt2_zh_kana': { tap: '半/全', hold: 'funcs_numpad' }
+
+    # Trackball bindings
+    '&TB_none':   { tap: '$$trackball$$' }
+    '&TB_mouse':  { tap: '$$trackball$$', hold: 'Pointing' }
+    '&TB_scroll': { tap: '$$trackball$$', hold: 'Scroll' }
+
+    # Rotary encoder bindings
+    '&RE_scroll':  { tap: '$$rotaryencoder$$', hold: '↑↓' }
+    '&RE_alttab':  { tap: '$$rotaryencoder$$', hold: 'AltTab' }
+    '&RE_volume':  { tap: '$$rotaryencoder$$', hold: 'Volume' }
+    '&RE_ctltab':  { tap: '$$rotaryencoder$$', hold: 'CtlTab' }
+    '&RE_sidesc':  { tap: '$$rotaryencoder$$', hold: '←→' }
