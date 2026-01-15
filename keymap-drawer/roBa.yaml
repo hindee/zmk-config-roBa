@@ -40,10 +40,10 @@ layers:
   - Alt
   - {t: 無変換, h: Alt}
   - {t: ␣, h: scroll}
-  - {t: 半/全, h: funcs_numpad, s: LANGUAGE 1}
+  - {t: 半/全, h: funcs_numpad}
   - ⌫
   - {t: ⏎, h: arrow}
-  - '&TB_none'
+  - $$trackball$$
   - {t: DEL, h: RIGHT CONTROL}
   symbols:
   - '!'
@@ -88,7 +88,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&TB_none'
+  - $$trackball$$
   - {t: ▽, type: trans}
   funcs_numpad:
   - F1
@@ -130,10 +130,10 @@ layers:
   - PRINTSCREEN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&TB_none'
+  - {t: ▽, type: trans}
+  - $$trackball$$
   - {t: ▽, type: trans}
   arrow:
   - {t: ▽, type: trans}
@@ -178,7 +178,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - '&TB_none'
+  - $$trackball$$
   - {t: ▽, type: trans}
   mouse:
   - {t: ▽, type: trans}
@@ -223,7 +223,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&TB_mouse'
+  - {t: $$trackball$$, h: Pointing}
   - {t: ▽, type: trans}
   bluetooth:
   - {t: ▽, type: trans}
@@ -268,7 +268,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&TB_none'
+  - $$trackball$$
   - {t: ▽, type: trans}
   scroll:
   - {t: ▽, type: trans}
@@ -313,7 +313,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&TB_scroll'
+  - {t: $$trackball$$, h: Scroll}
   - {t: ▽, type: trans}
 combos:
 - p: [0, 1]
