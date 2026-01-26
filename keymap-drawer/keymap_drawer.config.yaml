@@ -199,7 +199,7 @@ draw_config:
       </svg>
      
     rotaryencoder: |
-      <svg xmlns="http://www.w3.org/2000/svg"
+      <svg id="rotaryencoder" xmlns="http://www.w3.org/2000/svg"
         width="60" height="60"
         viewBox="-0.5 -0.5 60 60">
         <defs>
@@ -350,4 +350,4 @@ parse_config:
     '&RE_alttab':  { tap: '$$rotaryencoder$$', hold: 'AltTab' }
     '&RE_volume':  { tap: '$$rotaryencoder$$', hold: 'Volume' }
     '&RE_ctltab':  { tap: '$$rotaryencoder$$', hold: 'CtlTab' }
-    '&RE_sidesc':  { tap: '$$rotaryencoder$$', hold: '←→' }
+    '&RE_sidesc':  { tap: '$$rotaryencoder$$', hold: '←→', shifted: '$$param1$$'}
