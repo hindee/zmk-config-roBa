@@ -40,7 +40,7 @@ layers:
   - Alt
   - {t: 無変換, h: Alt}
   - {t: ␣, h: scroll}
-  - {t: 半/全, h: funcs_numpad}
+  - {t: INT HENKAN, h: funcs_numpad}
   - ⌫
   - {t: ⏎, h: arrow}
   - $$trackball$$
@@ -130,7 +130,7 @@ layers:
   - PRINTSCREEN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - $$trackball$$
