@@ -1,7 +1,7 @@
 <svg width="869" height="2428" viewBox="0 0 869 2428" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>/* start glyphs */
 <svg id="rotaryencoder">
-<svg xmlns="http://www.w3.org/2000/svg"
+<svg id="rotaryencoder" xmlns="http://www.w3.org/2000/svg"
  
   viewBox="-0.5 -0.5 60 60">
   <defs>
@@ -671,8 +671,8 @@ svg.keymap .keypos-15 rect.key_side {
 <g transform="translate(309, 112)" class="key keypos-15">
 <rect rx="9" ry="9" x="-28" y="-28" width="55" height="56" class="key side"/>
 <rect rx="2" ry="2" x="-22" y="-25" width="45" height="48" class="key"/>
+<use href="#rotaryencoder" xlink:href="#rotaryencoder" x="-30" y="-31" height="60" width="60.0" class="key tap glyph rotaryencoder"/>
 <text x="0" y="24" class="key hold"><tspan style="font-size: 83%">CtlTab</tspan></text>
-<use href="#rotaryencoder" xlink:href="#rotaryencoder" x="-8" y="-24" height="15" width="15.0" class="key shifted glyph rotaryencoder"/>
 </g>
 <g transform="translate(448, 112)" class="key keypos-16">
 <rect rx="9" ry="9" x="-28" y="-28" width="55" height="56" class="key side"/>
