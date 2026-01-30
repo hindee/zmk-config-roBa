@@ -111,10 +111,13 @@ draw_config:
       width: 58px !important;
       height: 58px !important;
       transform: scale(0.9) !important;
+      display: block !important;
     }
-    .keypos-15 rect.key,
     .keypos-15 rect.key_side {
-      display: none !important;
+    .keypos-15 rect.key,
+      //display: none !important;
+      fill: none !important;
+      stroke: none !important;
     }
     svg.keymap g.key.keypos-15 rect.key,
     svg.keymap .keypos-15 rect.key,
@@ -349,5 +352,6 @@ parse_config:
     '&RE_scroll':  { tap: '$$rotaryencoder$$', hold: '↑↓' }
     '&RE_alttab':  { tap: '$$rotaryencoder$$', hold: 'AltTab' }
     '&RE_volume':  { tap: '$$rotaryencoder$$', hold: 'Volume' }
-    '&RE_ctltab':  { tap: '$$rotaryencoder$$', hold: 'CtlTab' }
+    '&RE_ctltab':  { shifted: '$$rotaryencoder$$', hold: 'CtlTab' }
+    # '&RE_ctltab':  { tap: '$$rotaryencoder$$', shifted: '$$params$$', hold: 'CtlTab' }
     '&RE_sidesc':  { tap: '$$rotaryencoder$$', hold: '←→' }

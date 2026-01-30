@@ -61,7 +61,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&'
-  - {t: ▽, type: trans}
+  - {h: CtlTab, s: $$rotaryencoder$$}
   - ''''
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}

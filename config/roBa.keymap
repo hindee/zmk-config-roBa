@@ -345,6 +345,7 @@
             compatible = "zmk,behavior-none";
             #binding-cells = <0>;
         };
+
         RE_sidesc: RE_sidesc {
             compatible = "zmk,behavior-none";
             #binding-cells = <0>;
@@ -370,7 +371,7 @@
         symbols {
             bindings = <
 &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH  &kp DOLLAR  &kp PERCENT                                       &kp JP_LPAREN  &kp JP_RPAREN   &kp MINUS          &jis_CRT_TLD  &jis_YEN_PIP
-&trans           &trans         &trans    &trans      &kp JP_AMPERSAND &trans             &kp JP_QUOTE  &jis_LBK_LBT   &jis_RBK_RBT    &kp JP_PLUS        &jis_AT_BKQ   &jis_CLN_AST
+&trans           &trans         &trans    &trans      &kp JP_AMPERSAND &RE_ctltab             &kp JP_QUOTE  &jis_LBK_LBT   &jis_RBK_RBT    &kp JP_PLUS        &jis_AT_BKQ   &jis_CLN_AST
 &trans           &trans         &trans    &trans      &trans           &kp DEL            &kp INSERT    &trans         &trans          &kp JP_UNDERSCORE  &trans        &trans
 &trans           &trans         &trans    &trans      &trans           &trans             &trans        &trans         &TB_none                                         &trans
             >;
