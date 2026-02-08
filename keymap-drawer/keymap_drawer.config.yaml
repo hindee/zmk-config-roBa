@@ -1,0 +1,337 @@
+# keymap_drawer.config.yaml for roBa with trackball
+draw_config:
+  n_columns: 2
+  draw_key_sides: false
+  append_colon_to_layer_header: true
+  small_pad: 4.0
+
+  # キーサイズ・レイアウト
+  key_w: 60.0
+  key_h: 60.0
+  split_gap: 30.0
+  combo_w: 40.0
+  combo_h: 20.0
+  key_rx: 6.7
+  key_ry: 6.7
+  inner_pad_w: 2.0
+  inner_pad_h: 2.0
+  outer_pad_w: 10.0
+  outer_pad_h: 10.0
+  line_spacing: 1.2
+  arc_radius: 10.0
+
+  # キー側面パラメータ
+  key_side_pars:
+    rel_x: 0
+    rel_y: 1
+    rel_w: 10
+    rel_h: 8
+    rx: 6.7
+    ry: 6.7
+
+  # SVGスタイル
+  svg_extra_style: |
+    svg.keymap {
+      background-color: #111111 !important;
+      font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
+      font-size: 14px;
+      font-weight: bold;
+      text-rendering: optimizeLegibility;
+    }
+    text.label { fill: #333333; }
+    text { fill: #AAAAAA; }
+    rect.key {
+      fill: #444444;
+      stroke: #222222 !important;
+      stroke-width: 2.0;
+    }
+    rect.held, rect.combo.held {
+      fill: #FFAAAA !important;
+      stroke: #000000 !important;
+      stroke-width: 2.0;
+      opacity: 0.8;
+    }
+    rect.key_side {}
+
+    .keypos-37 text,
+    .keypos-38 text,
+    .keypos-39 text,
+    .keypos-40 text,
+    .keypos-41 text {
+      fill: #000000 !important;
+      font-weight: bold;
+      font-size: 13px;
+      text-anchor: middle !important;
+      dominant-baseline: middle !important;
+      paint-order: normal;
+      stroke: none !important;
+    }
+    .keypos-37 rect.key,
+    .keypos-38 rect.key,
+    .keypos-39 rect.key {
+      fill: #FFE655 !important;
+      stroke: #544D35 !important;
+      stroke-width: 2.0;
+    }
+    .keypos-40 rect.key,
+    .keypos-41 rect.key {
+      fill: #FF7F27 !important;
+      stroke: #703811 !important;
+      stroke-width: 2.0;
+    }
+    .keypos-37 .key.held,
+    .keypos-38 .key.held,
+    .keypos-39 .key.held,
+    {
+      fill: #E3D18F !important;
+      stroke: #544D35 !important;
+      stroke-width: 2.0;
+    }
+    .keypos-40 .key.held,
+    .keypos-41 .key.held {
+      fill: #FF7F27 !important;
+      stroke: #703811 !important;
+      stroke-width: 2.0;
+    }
+
+    /* Trackball */
+    .keypos-42 rect.key,
+    .keypos-42 rect.key_side {
+      display: none !important;
+    }
+    .keypos-42 use[href="#trackball"] {
+      width: 145px !important;
+      height: 90px !important;
+      x: -13px !important;
+      y: -37px !important;
+      transform: scale(1.5) !important;
+    }
+    .keypos-42 text.hold {
+      fill: #000000 !important;
+      font-size: 12px !important;
+      font-weight: bold !important;
+      pointer-events: none;
+      display: block !important;
+      transform: translate(48px, -17px) !important;
+    }
+
+    .keypos-15 rect.key {
+      fill: #FFFFFF !important;
+      stroke: #000000 !important;
+      stroke-width: 2.0;
+    }
+    /* 文字の位置と色を調整 */
+    .keypos-15 text {
+      fill: #000 !important;
+      font-weight: 1000 !important;
+      font-size: 16px;
+      text-anchor: middle !important;
+      /*dominant-baseline: middle !important;
+      paint-order: normal;
+      stroke: none !important;
+      stroke-width: 1.6 !important;
+      transform: translateY(20px);*/
+    }
+    .keypos-15 text.hold {
+      fill: #000000 !important;
+      font-size: 12px !important;
+      font-weight: bold !important;
+      pointer-events: none;
+      display: block !important;
+      transform: translateY(-5px) !important;
+    }
+    /* コンボの外枠（背景色と線の色） */
+    rect.combo {
+        fill: #666666 !important;
+        stroke: #FBC02D !important;
+        stroke-width: 1.5;
+    }
+
+  # レジェンド設定
+  legend_font_size: 12
+  legend_hold_font_size: 10
+  legend_shifted_font_size: 10
+  legend_tap_offset_y: -6
+  legend_hold_offset_y: 10
+  legend_shifted_offset_y: 4
+  legend_max_width_ratio: 0.9
+  legend_max_height_ratio: 0.35
+  legend_line_spacing: 1.1
+  combo_legend_font_size: 4
+  combo_legend_offset_y: 0
+  combo_legend_max_width_ratio: 0.9
+  combo_legend_max_height_ratio: 0.5
+  combo_legend_line_spacing: 1.0
+
+  # グリフ設定
+  glyph_font_size: 20
+  glyph_hold_font_size: 16
+  glyph_shifted_font_size: 16
+  glyph_tap_offset_y: -4
+  glyph_hold_offset_y: 6
+  glyph_shifted_offset_y: 2
+  glyph_max_width_ratio: 2.0
+  glyph_max_height_ratio: 2.0
+  glyph_line_spacing: 1.1
+  shrink_wide_legends: 5
+  glyph_tap_size: 60
+  glyph_hold_size: 60
+  glyph_shifted_size: 15
+
+  # ----- Embedded glyphs -----
+  glyphs:
+    trackball: |
+      <svg id="trackball" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140">
+        <defs>
+          <!-- 白さを強調しつつ、境界だけを強く落としたグラデーション -->
+          <linearGradient id="kd-pureWhiteBall" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="50%" stop-color="#FFFFFF"/> <!-- ここまで真っ白を維持 -->
+            <stop offset="85%" stop-color="#808080"/> <!-- 境界付近で一気に影を作る -->
+            <stop offset="100%" stop-color="#606060"/> <!-- 最深部はケースより暗く -->
+          </linearGradient>
+          
+          <linearGradient id="kd-outerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#D0D0D0"/>
+          </linearGradient>
+          <linearGradient id="kd-innerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#F0F0F0"/>
+          </linearGradient>
+        </defs>
+
+        <g id="ball-group">
+          <!-- 白さが際立つボール -->
+          <circle cx="119.3" cy="79.5" r="53"
+                  fill="url(#kd-pureWhiteBall) !important"
+                  style="fill: url(#kd-pureWhiteBall) !important;"/>
+
+          <path d="M170.9 22.5 Q152.4 22.5 152.4 41.1 L152.4 118.0 Q152.4 136.5 170.9 136.5 L238.6 136.5 Q257.2 136.5 257.2 118.0 L257.2 41.1 Q257.2 22.5 238.6 22.5 Z"
+                fill="url(#kd-outerGrad) !important"
+                style="fill: url(#kd-outerGrad) !important;"/>
+
+          <path d="M152.4 39.8 C139.2 66.3 139.2 92.8 152.4 119.3 C165.7 119.3 165.7 119.3 179.0 119.3 L225.4 119.3 C238.6 119.3 238.6 106.0 238.6 106.0 L238.6 53.0 C238.6 53.0 238.6 39.8 225.4 39.8 L179.0 39.8 C165.7 39.8 165.7 39.8 152.4 39.8 Z"
+                fill="url(#kd-innerGrad) !important"
+                style="fill: url(#kd-innerGrad) !important;"/>
+        </g>
+      </svg>
+     
+    rotaryencoder: |
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92">
+        <path d="M21.25 10 h49.5 v70 h-49.5 z 
+                 M21.25 25 h49.5 M21.25 35 h49.5 M21.25 45 h49.5 M21.25 55 h49.5 M21.25 65 h49.5" 
+              style="fill:#CCCCCC !important; stroke:#444444 !important; stroke-width:3.0px !important; fill-rule:evenodd !important;" />
+      </svg>
+  # ----- External glyph providers -----
+  glyph_urls:
+    tabler: https://unpkg.com/@tabler/icons/icons/outline/{}.svg
+    tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
+    mdi: https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/{}.svg
+    mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
+    material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
+  use_local_cache: true
+
+# ======================================================================
+# Parse configuration
+# ======================================================================
+
+parse_config:
+  preprocess: true
+  skip_binding_parsing: false
+  sticky_label: sticky
+  toggle_label: $$mdi:toggle-switch$$
+
+  trans_legend:
+    t: ▽
+    type: trans
+
+  # ----- ZMK keycode mapping -----
+  zmk_keycode_map:
+    EXCLAMATION: '!'
+    AT: '"'
+    HASH: '#'
+    DOLLAR: '$'
+    PERCENT: '%'
+    CARET: '&'
+    AMPERSAND: "'"
+    ASTERISK: '('
+    LEFT_PARENTHESIS: ')'
+    RIGHT_PARENTHESIS: '('
+    EQUAL: '^'
+    PLUS: '~'
+    MINUS: '-'
+    UNDERSCORE: '='
+    SLASH: '/'
+    QUESTION: '?'
+    BACKSLASH: ']'
+    PIPE: '}'
+    SEMICOLON: ';'
+    COLON: '+'
+    DOUBLE_QUOTES: '*'
+    SINGLE_QUOTE: ':'
+    COMMA: ','
+    PERIOD: '.'
+    LESS_THAN: '<'
+    GREATER_THAN: '>'
+    LEFT_BRACKET: '@'
+    RIGHT_BRACKET: '['
+    LEFT_BRACE: '`'
+    RIGHT_BRACE: '{'
+    GRAVE: '半/全'
+    TILDE: '~'
+    SPACE: '␣'
+    BACKSPACE: '⌫'
+    # ENTER: '⏎'
+    TAB: '⇥'
+    ESCAPE: '⎋'
+    LSHIFT: '⇧'
+    RSHIFT: '⇧'
+    LCTRL: 'Ctrl'
+    RCTRL: 'Ctrl'
+    LEFT_ALT: 'Alt'
+    RIGHT_ALT: 'Alt'
+    LGUI: '⌘'
+    RGUI: '⌘'
+    UP_ARROW: '↑'
+    DOWN_ARROW: '↓'
+    LEFT_ARROW: '←'
+    RIGHT_ARROW: '→'
+    YEN_PIP: '¥'
+    YEN_UNS: '¥'
+    JP_YEN: '¥'
+    JP_PIP: '|'
+    JP_UNS: '_'
+    JPY: '¥'
+    JIS_YEN: '¥'
+    JIS_PIPE: '|'
+    JIS_UNDERSCORE: '_'
+    '0x89': '¥'
+    'LS(0x89)': '|'
+    'LS(0x87)': '_'
+    INSERT: 'INS'
+    'LG(LA(K))': 'MIC'
+    LEFT_WIN: '⌘'
+  # ----- Raw bindings for encoders/trackball -----
+  raw_binding_map:
+    '&kp_exit_AML RIGHT_SHIFT': { tap: '/', hold: '⇧' }
+    '&kp_exit_AML INT_MUHENKAN': { tap: '無変換', hold: 'ALT' }
+    '&kp_exit_AML Z': { tap: 'Z', hold: '⇧' }
+    '&lt2_zh_kana': { tap: '半/全', hold: 'funcs_numpad' }
+
+    # Trackball bindings
+    '&TB_none':   { tap: '$$trackball$$' }
+    '&TB_mouse':  { tap: '$$trackball$$', hold: 'Pointing' }
+    '&TB_scroll': { tap: '$$trackball$$', hold: 'Scroll' }
+
+    # Rotary encoder bindings
+    '&RE_scroll':  { tap: '$$rotaryencoder$$', hold: '↑↓' }
+    '&RE_alttab':  { tap: '$$rotaryencoder$$', hold: 'AltTab' }
+    '&RE_volume':  { tap: '$$rotaryencoder$$', hold: 'Volume' }
+
+    '&RE_MB1':  { tap: '$$rotaryencoder$$', shifted: 'MB1', hold: '↑↓' }
+    '&RE_HOME':  { tap: '$$rotaryencoder$$', shifted: 'HOME', hold: 'LC(TAB)' }
+    '&RE_trans':  { tap: '$$rotaryencoder$$', shifted: '▽', hold: 'LA(TAB)' }
+    '&RE_ctltab':  { tap: '$$rotaryencoder$$', shifted: 'LC(TAB)', hold: '↑↓'}
+    '&RE_sidesc':  { tap: '$$rotaryencoder$$', shifted: '←→', hold: '↑↓'}
+

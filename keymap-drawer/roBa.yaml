@@ -16,7 +16,7 @@ layers:
   - D
   - F
   - G
-  - '&mkp MB1'
+  - {t: $$rotaryencoder$$, h: ↑↓, s: MB1}
   - ESC
   - H
   - J
@@ -42,7 +42,7 @@ layers:
   - {t: ␣, h: scroll}
   - {t: INT HENKAN, h: funcs_numpad}
   - ⌫
-  - {t: ⏎, h: arrow}
+  - {t: ENTER, h: arrow}
   - $$trackball$$
   - {t: DEL, h: RIGHT CONTROL}
   symbols:
@@ -61,7 +61,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&'
-  - {t: $$rotaryencoder$$, h: CtlTab}
+  - {t: $$rotaryencoder$$, h: ↑↓, s: LC(TAB)}
   - ''''
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
@@ -106,7 +106,7 @@ layers:
   - F8
   - F9
   - F10
-  - {t: ▽, type: trans}
+  - {t: $$rotaryencoder$$, h: LA(TAB), s: ▽}
   - {t: ▽, type: trans}
   - /
   - '4'
@@ -150,8 +150,8 @@ layers:
   - Gui+←
   - Gui+→
   - Ctl+Gui+←
-  - Ctl+Gui+→
-  - HOME
+  - {t: ▽, type: trans}
+  - {t: $$rotaryencoder$$, h: LC(TAB), s: HOME}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ←
@@ -196,7 +196,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: $$rotaryencoder$$, h: LA(TAB), s: ▽}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp MB1'
@@ -241,7 +241,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: $$rotaryencoder$$, h: LA(TAB), s: ▽}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -286,7 +286,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: $$rotaryencoder$$, h: LA(TAB), s: ▽}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

@@ -329,6 +329,10 @@
             #binding-cells = <0>;
         };
 
+        RE_trans: RE_trans {
+            compatible = "zmk,behavior-none";
+            #binding-cells = <0>;
+        };
         RE_scroll: RE_scroll {
             compatible = "zmk,behavior-none";
             #binding-cells = <0>;
@@ -350,6 +354,14 @@
             compatible = "zmk,behavior-none";
             #binding-cells = <0>;
         };
+        RE_HOME: RE_HOME {
+            compatible = "zmk,behavior-key-press";
+            #binding-cells = <1>;
+        };
+        RE_MB1: RE_MB1 {
+            compatible = "zmk,behavior-mouse-keypress";
+            #binding-cells = <1>;
+        };
     };
 
     // -------- Keymaps --------
@@ -360,7 +372,7 @@
         default_layer {
             bindings = <
 &kp Q                  &kp W         &kp E         &kp R                               &kp T                                          &kp Y        &kp U  &kp I      &kp O       &kp P
-&lt 1 A                &kp S         &kp D         &kp F                               &kp G        &mkp MB1           &kp ESC        &kp H        &kp J  &kp K      &kp L       &lt 6 SEMICOLON
+&lt 1 A                &kp S         &kp D         &kp F                               &kp G        &RE_MB1 MB1        &kp ESC        &kp H        &kp J  &kp K      &kp L       &lt 6 SEMICOLON
 &mt_exit_AML LSHIFT Z  &kp X         &kp C         &kp V                               &kp B        &kp LSHIFT         &kp RSHIFT     &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
 &kp LCTRL              &kp LEFT_WIN  &kp LEFT_ALT  &mt_exit_AML LEFT_ALT INT_MUHENKAN  &lt 6 SPACE  &lt 2 INT_HENKAN   &kp BACKSPACE  &lt 3 ENTER  &TB_none                      &mt RIGHT_CONTROL DEL
             >;
@@ -371,7 +383,7 @@
         symbols {
             bindings = <
 &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH  &kp DOLLAR  &kp PERCENT                                       &kp JP_LPAREN  &kp JP_RPAREN   &kp MINUS          &jis_CRT_TLD  &jis_YEN_PIP
-&trans           &trans         &trans    &trans      &kp JP_AMPERSAND &RE_ctltab             &kp JP_QUOTE  &jis_LBK_LBT   &jis_RBK_RBT    &kp JP_PLUS        &jis_AT_BKQ   &jis_CLN_AST
+&trans           &trans         &trans    &trans      &kp JP_AMPERSAND &RE_ctltab         &kp JP_QUOTE  &jis_LBK_LBT   &jis_RBK_RBT    &kp JP_PLUS        &jis_AT_BKQ   &jis_CLN_AST
 &trans           &trans         &trans    &trans      &trans           &kp DEL            &kp INSERT    &trans         &trans          &kp JP_UNDERSCORE  &trans        &trans
 &trans           &trans         &trans    &trans      &trans           &trans             &trans        &trans         &TB_none                                         &trans
             >;
@@ -382,7 +394,7 @@
         funcs_numpad {
             bindings = <
 &kp F1   &kp F2   &kp F3           &kp F4      &kp F5                             &kp JP_ASTERISK  &kp N7  &kp N8  &kp N9  &kp JP_PLUS
-&kp F6   &kp F7   &kp F8           &kp F9      &kp F10   &trans        &trans     &kp SLASH        &kp N4  &kp N5  &kp N6  &kp MINUS
+&kp F6   &kp F7   &kp F8           &kp F9      &kp F10   &RE_trans     &trans     &kp SLASH        &kp N4  &kp N5  &kp N6  &kp MINUS
 &kp F11  &kp F12  &trans           &trans      &trans    &kp LG(LA(K)) &trans     &kp N0           &kp N1  &kp N2  &kp N3  &kp N0
 &trans   &trans   &kp PRINTSCREEN  &trans      &trans    &trans        &trans     &trans           &TB_none                &trans
             >;
@@ -392,8 +404,8 @@
 
         arrow {
             bindings = <
-&trans  &kp LC(LS(TAB))     &kp PRINTSCREEN         &kp LC(TAB)              &trans                                 &trans  &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans
-&trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)     &kp LC(LG(LEFT_ARROW))   &kp LC(LG(RIGHT_ARROW))  &kp HOME      &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans  &kp LC(LS(TAB))     &kp PRINTSCREEN         &kp LC(TAB)              &trans                                         &trans  &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans
+&trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)     &kp LC(LG(LEFT_ARROW))   &trans                   &RE_HOME ENC_HOME &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
 &trans  &kp LEFT_SHIFT      &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT_ARROW))  &trans                   &trans        &trans  &trans  &kp END         &kp DOWN_ARROW  &kp PAGE_DOWN    &trans
 &trans  &trans              &trans                  &trans                   &trans                   &trans        &trans  &trans  &TB_none                                         &trans
             >;
@@ -404,9 +416,9 @@
         mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &RE_trans   &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &TB_mouse                       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &TB_mouse                     &trans
             >;
 
             sensor-bindings = <&tab_switcher>;
@@ -414,17 +426,17 @@
 
         bluetooth {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                              &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&bt BT_CLR      &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
-&bt BT_CLR_ALL  &kp N1  &kp N2  &kp N3  &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
-&trans          &trans  &trans  &trans  &trans  &trans      &trans  &trans        &TB_none                                   &trans
+&trans  &trans  &trans  &trans  &trans                                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&bt BT_CLR      &trans  &trans  &trans  &trans     &RE_trans   &trans  &trans        &trans        &trans        &trans        &trans
+&bt BT_CLR_ALL  &kp N1  &kp N2  &kp N3  &trans     &trans      &trans  &trans        &trans        &trans        &trans        &trans
+&trans          &trans  &trans  &trans  &trans     &trans      &trans  &trans        &TB_none                                   &trans
             >;
         };
 
         scroll {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &RE_trans &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &TB_scroll              &trans
             >;
