@@ -1,17 +1,12 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <scroll-snap.dtsi>
-// -------------------- Constants --------------------
-
 
 // Layer Indexes
 
@@ -50,6 +45,7 @@
 #define JP_HANZEN       GRAVE             // 半角/全角
 
 // -------------------- Behavior Parameters --------------------
+
 
 &mt {
     flavor = "balanced";
