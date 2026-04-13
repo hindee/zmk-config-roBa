@@ -401,7 +401,7 @@
         arrow {
             bindings = <
 &trans  &kp LC(LS(TAB))     &kp PRINTSCREEN         &kp LC(TAB)              &trans                                         &trans  &kp HOME        &kp UP_ARROW    &kp PAGE_UP      &trans
-&trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)     &kp LC(LG(LEFT_ARROW))   &trans                   &RE_HOME ENC_HOME &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)     &kp LC(LG(LEFT_ARROW))   &trans                   &RE_HOME HOME &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
 &trans  &kp LEFT_SHIFT      &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT_ARROW))  &trans                   &trans        &trans  &trans  &kp END         &kp DOWN_ARROW  &kp PAGE_DOWN    &trans
 &trans  &trans              &trans                  &trans                   &trans                   &trans        &trans  &trans  &TB_none                                         &trans
             >;
